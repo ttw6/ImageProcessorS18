@@ -1,0 +1,6 @@
+pymodm
+flask
+flask-cors
+requests
+pytest
+numpy

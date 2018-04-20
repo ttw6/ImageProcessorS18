@@ -3,4 +3,5 @@ flask
 flask-cors
 requests
 pytest
+pytest-pep8
 numpy

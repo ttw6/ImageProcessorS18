@@ -12,4 +12,3 @@ class User(MongoModel):
     # been run (all filtering options)
     latency = fields.ListField(field=fields.IntegerField())
     # stores the latency of each of the user actions
-

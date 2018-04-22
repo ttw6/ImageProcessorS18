@@ -1,9 +1,18 @@
+from skimage import exposure, io, util
+import os
 import skimage
 import base64
 
 
-from skimage import io
-from skimage import util
+def strip_ext(file_name):
+    """
+    Strip file extension
+
+    :param file_name: Full file name
+    :return: File name and extension
+    """
+    [file_name, file_ext] = os.path.splitext(file_name)
+    return file_name, file_ext
 
 
 def Image_String(filename):
@@ -17,16 +26,20 @@ def Save_Image_String(base64image, filename):
         Image_Out.write(base64.b64decode(base64image))
 
 
-def Histogram_Eq():
-    pass
+def Log_Compression(file_name, file_type='.jpg'):
+    """
+    Function will replace pixel value with its logarithm (effectively enhancing
+    low intensity pixel values).
 
-
-def Contrast_Streching():
-    pass
-
-
-def Log_Compression():
-    pass
+    :param file_name: Name of file
+    :param file_type: File type (default is .jpg)
+    :return: output image (in .jpg)
+    """
+    image = io.imread(file_name + file_type, as_grey=True)
+    # look into user warnings, triggered by color photos?
+    log_out = exposure.adjust_log(image)
+    output = io.imsave(file_name + '_log.jpg', log_out)
+    return output
 
 
 def Reverse_Video():

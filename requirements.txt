@@ -9,3 +9,4 @@ scikit-image
 ipython
 scipy
 matplotlib
+opencv-python

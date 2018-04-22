@@ -1,17 +1,31 @@
 from skimage import exposure, io
+import os
 
 
 def main():
-    name = 'sample1'
-    Log_Compression(name)
+    #file = 'sample1.jpg'
+    #name, ext = strip_ext(file)
+    #Log_Compression(name)
 
     '''
     Uncomment block for multiple files
-    
-    name = ['sample1', 'sample2']
-    for n, val in enumerate(name):
-        Log_Compression(name[n])
+
+    file = ['sample1.jpg', 'sample2.jpg']
+    for n, val in enumerate(file):
+        name, ext = strip_ext(val)
+        Log_Compression(name)
     '''
+
+
+def strip_ext(file_name):
+    """
+    Strip file extension
+
+    :param file_name: Full file name
+    :return: File name and extension
+    """
+    [file_name, file_ext] = os.path.splitext(file_name)
+    return file_name, file_ext
 
 
 def Histogram_Eq():
@@ -31,8 +45,8 @@ def Log_Compression(file_name, file_type='.jpg'):
     :param file_type: File type (default is .jpg)
     :return: output image (in .jpg)
     """
-    image = io.imread(file_name + file_type,
-                      as_grey=True)  # look into user warnings
+    image = io.imread(file_name + file_type, as_grey=True)
+    # look into user warnings, color
     log_out = exposure.adjust_log(image)
     output = io.imsave(file_name + '_log.jpg', log_out)
     return output

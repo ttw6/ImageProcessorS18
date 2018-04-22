@@ -15,7 +15,7 @@ def hist(img):
 
 def contrast_stretching(img):
     p2, p98 = np.percentile(img, (2, 98))
-    contrast= exposure.rescale_intensity(img, in_range=(p2, p98))
+    contrast = exposure.rescale_intensity(img, in_range=(p2, p98))
     return contrast
 
 

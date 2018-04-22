@@ -10,4 +10,3 @@ def encode_image_string(filename):
 def save_image_string(base64image, filename):
     with open(filename, 'wb') as image_out:
         image_out.write(base64.b64decode(base64image))
-

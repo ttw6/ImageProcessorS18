@@ -37,7 +37,3 @@ def contrast_hist(img):
 def show_img(img):
     plt.imshow(img)
     plt.show()
-
-
-
-

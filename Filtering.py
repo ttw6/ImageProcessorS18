@@ -47,6 +47,7 @@ def equalization_hist(img):
     plt.hist(img.ravel(), 256, [0, 1])
     plt.show()
 
+
 def contrast_hist(img):
     plt.hist(img.ravel(), 256, [0, 256])
     plt.show()

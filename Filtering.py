@@ -16,7 +16,7 @@ def Save_Image_String(base64image, filename):
     with open(filename, 'wb') as Image_Out:
         Image_Out.write(base64.b64decode(base64image))
 
-  
+
 def Histogram_Eq():
     pass
 

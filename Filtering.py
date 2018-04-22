@@ -30,7 +30,7 @@ def Log_Compression(file_name, file_type='.jpg'):
     """
     Function will replace pixel value with its logarithm (effectively enhancing
     low intensity pixel values).
-   
+
     :param file_name: Name of file
     :param file_type: File type (default is .jpg)
     :return: output image (in .jpg)

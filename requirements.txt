@@ -6,3 +6,6 @@ pytest
 pytest-pep8
 numpy
 scikit-image
+ipython
+scipy
+matplotlib

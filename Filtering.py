@@ -3,9 +3,9 @@ import os
 
 
 def main():
-    #file = 'sample1.jpg'
-    #name, ext = strip_ext(file)
-    #Log_Compression(name)
+    file = 'sample1.jpg'
+    name, ext = strip_ext(file)
+    Log_Compression(name)
 
     '''
     Uncomment block for multiple files
@@ -46,7 +46,7 @@ def Log_Compression(file_name, file_type='.jpg'):
     :return: output image (in .jpg)
     """
     image = io.imread(file_name + file_type, as_grey=True)
-    # look into user warnings, color
+    # look into user warnings, triggered by color photos?
     log_out = exposure.adjust_log(image)
     output = io.imsave(file_name + '_log.jpg', log_out)
     return output

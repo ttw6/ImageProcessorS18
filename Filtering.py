@@ -34,6 +34,4 @@ def Reverse_Video():
     im_inverted = skimage.util.invert(im)
     skimage.io.imsave("hope.jpg", im_inverted)
     
-
-
-
+    

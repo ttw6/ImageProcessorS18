@@ -50,4 +50,3 @@ def latency(email):
     except:
         data = 'User does not exist'
         return jsonify(data), 404
-

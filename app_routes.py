@@ -1,11 +1,28 @@
 from flask import Flask, jsonify, request
 from pymodm import connect, MongoModel, fields
-from models import *
+import models
 import datetime
 import numpy
+from main import *
+from testfile import *
 
 app = Flask(__name__)
 connect("mongodb://vcm-3579.vm.duke.edu:27017/heart_rate_app")
+
+
+@app.route('/<email>/images', methods=['GET'])
+def images(email):
+    """Function is a GET request that allows user to
+    access all image file names that have been uploaded
+    :param email: user email to query data from"""
+    mail = "{0}".format(email)
+    try:
+        user = models.User.objects.raw({"_id": mail}).first()
+        data = {'Uploaded Images': str(user.image_names)}
+        return jsonify(data), 200
+    except:
+        data = 'User does not exist'
+        return jsonify(data), 404
 
 
 @app.route('/<email>/user_action', methods=['GET'])
@@ -24,20 +41,6 @@ def user_stats(email):
         return jsonify(data), 404
 
 
-@app.route('/<email>/images', methods=['GET'])
-def images(email):
-    """Function is a GET request that allows user to
-    access all image file names that have been uploaded"""
-    mail = "{0}".format(email)
-    try:
-        user = models.User.objects.raw({"_id": mail}).first()
-        data = {'Uploaded Images': str(user.image_names)}
-        return jsonify(data), 200
-    except:
-        data = 'User does not exist'
-        return jsonify(data), 404
-
-
 @app.route('/<email>/latency', methods=['GET'])
 def latency(email):
     """Function is a GET request that allows
@@ -50,3 +53,63 @@ def latency(email):
     except:
         data = 'User does not exist'
         return jsonify(data), 404
+
+
+@app.route('/imageFilter', methods=['POST'])
+def post_image():
+    """Function  is a POST request. Takes in parameters
+    of a base 64 image. Loads the original image from path,
+    performs a function, then saves the  altered image.
+    Takes in base64 image and a number corresponding
+    with the function to be performed"""
+    r = request.get_json()
+    try:
+        filt = r['Filter']
+        # 1 is equalization, 2 is contrast, 3 is reverse video, 4 is log compression
+        data_string = r['Data']
+        # dataString is the base64 string from the post method taken from react
+        image_name = r['filename']
+        # the name of the file that the user wants to name the image
+        email = r['email']
+        # email of user
+    except:
+        return 'Input fields either missing or incorrect, double check before posting', 400
+
+    if not isinstance(filt, int):
+        return 'Filter value must have key value between 1-4', 400
+
+    if not isinstance(email, str):
+        return 'Email input must be string type, please reinput', 400
+
+    if not isinstance(image_name, str):
+        return 'Image name must be string type, please reinput', 400
+
+    Save_Image_String(data_string, image_name + '.jpg')
+    # saves image into VCM since flask runs on VCM
+    # following functions assume that testfile methods
+    # already save to the path
+
+    image = skimage.io.imread("mongodb://vcm-3579.vm.duke.edu:27017/heart_rate_app")
+    # url will be changed later to vcm that is set up
+
+    try:
+        add_user_action(email, filt)
+
+    except:
+        create_user(email, image_name)
+
+    if filt == 1:
+        filtered_image = hist(image)
+
+    elif filt == 2:
+        filtered_image = contrast_stretching(image)
+
+    elif filt == 3:
+        filtered_image = log_compression(image)
+
+    else:
+        reverse_video()
+
+    image_string = base64.b64encode(filtered_image)
+    json_data = {"filtered_string": str(image_string)}
+    return jsonify(json_data), 200

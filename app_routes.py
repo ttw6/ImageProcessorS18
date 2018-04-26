@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from pymodm import connect, MongoModel, fields
 import models
+import time
 import datetime
 import numpy
 from main import *
@@ -88,28 +89,20 @@ def post_image():
     # saves image into VCM since flask runs on VCM
     # following functions assume that testfile methods
     # already save to the path
+    upload_time = datetime.datetime.now()
+    start_time = time.time()
 
     image = skimage.io.imread("mongodb://vcm-3579.vm.duke.edu:27017/heart_rate_app")
     # url will be changed later to vcm that is set up
 
     try:
-        add_user_action(email, filt)
+        add_user_action(email, filt, image_name, upload_time)
 
     except:
-        create_user(email, image_name)
+        create_user(email, image_name, upload_time)
 
-    if filt == 1:
-        filtered_image = hist(image)
-
-    elif filt == 2:
-        filtered_image = contrast_stretching(image)
-
-    elif filt == 3:
-        filtered_image = log_compression(image)
-
-    else:
-        reverse_video()
-
-    image_string = base64.b64encode(filtered_image)
+    filt_img = filter_image(email, filt, image, start_time)
+    image_string = base64.b64encode(filt_img)
     json_data = {"filtered_string": str(image_string)}
     return jsonify(json_data), 200
+

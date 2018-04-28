@@ -5,8 +5,8 @@ import SimpleAppBar from './Title.js';
 import ButtonHome from './ButtonHome.js';
 import ButtonInfo from './ButtonInfo.js';
 import ButtonCreators from './ButtonCreators.js';
-import Upload from './Upload.js';
 import TeamInfo from './TeamPic.js';
+import Basic from './TrialUp.js';
 
 class App extends Component {
 	constructor() {
@@ -30,7 +30,7 @@ class App extends Component {
 				  <ButtonHome onClickButton={this.onButtonChange}/>
 				  <ButtonInfo onClickButton={this.onButtonChange}/>
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
-				  <Upload/> 
+				  <Basic/> 
 				  </div>
 				 );
 

@@ -5,7 +5,8 @@ import SimpleAppBar from './Title.js';
 import ButtonHome from './ButtonHome.js';
 import ButtonInfo from './ButtonInfo.js';
 import ButtonCreators from './ButtonCreators.js';
-
+import Upload from './Upload.js';
+import TeamInfo from './TeamPic.js';
 
 class App extends Component {
 	constructor() {
@@ -20,29 +21,31 @@ class App extends Component {
 	}
 
   render() {
-	  if (this.indicator === 1) {
+	  if (this.state.indicator === 1) {
 		  return(
 				  <div>
 				  
 				  <SimpleAppBar/>
-				 1
+				 
 				  <ButtonHome onClickButton={this.onButtonChange}/>
 				  <ButtonInfo onClickButton={this.onButtonChange}/>
-				  <ButtonCreators onClickButton={this.onButtonChange}/> 
+				  <ButtonCreators onClickButton={this.onButtonChange}/>
+				  <Upload/> 
 				  </div>
 				 );
 
 	  }
 
-	  else if (this.indicator ===2) {
+	  else if (this.state.indicator ===2) {
 		  return(
 				  <div>
 				  
 				  <SimpleAppBar />
-				  2
+				  
 				  <ButtonHome onClickButton={this.onButtonChange}/>
 				  <ButtonInfo onClickButton={this.onButtonChange}/>
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
+				  
 				  </div>
 				 );
 	  }
@@ -52,10 +55,11 @@ class App extends Component {
 				  <div>
 
 				  <SimpleAppBar />
-				  3
-				  <ButtonHome onClickButton={this.onButtonChange}/>
-				  <ButtonInfo onClickButton={this.onButtonChange}/>
+				  
+				  <ButtonHome onClickButton={this.onButtonChange}/> <ButtonInfo onClickButton={this.onButtonChange}/>
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
+				  
+				  <TeamInfo />
 				  </div>
 			);
 

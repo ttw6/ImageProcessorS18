@@ -1,16 +1,19 @@
 import React from 'react';
+import Dropzone from 'react-dropzone'
 
-class Upload extends Component{
+class Upload extends React.Component{
 	constructor() {
 		super();
 		this.state = {
 			currentImageString: "",
+			filesIm: [],
 		}
 	}
 
 	onUpload = (files) => {
 		const reader = new FileReader()
 		const file = files[0]
+		this.setState({'filesIm': files}); 
 		reader.readAsDataURL(file);
 		reader.onloaded = () =>{
 			console.log(reader.result);
@@ -21,9 +24,9 @@ class Upload extends Component{
 
 	render() {
 		return (
-				<div>
+				<div className="dropzone">
 				<h2>Upload your Image</h2>
-				<UploadField onFiles={this.onUpload}>
+				<Dropzone onDrop={this.onUpload.bind(this)}>
 				    <div style={{
 					    backgroundColor: 'gray',
 		                            width: '200px',
@@ -31,8 +34,12 @@ class Upload extends Component{
 		                            textAlign: 'center'}}>
 					 Upload Here
 			            </div>
-				 </UploadField>
-				 <img src={this.stae.currentImageString} />
+				 </Dropzone>
+				 <img src={this.state.currentImageString} />
+				 <ul>
+				     {this.state.filesIm.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)}
+				 </ul>
+				 <img src={this.state.filesIm}/>
 				 </div>
 		       )
 	}

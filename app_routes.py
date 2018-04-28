@@ -5,10 +5,12 @@ import time
 import datetime
 import numpy
 from main import *
-from testfile import *
+from Filtering import *
+from skimage import data, img_as_float
+from skimage import exposure, io, util
 
 app = Flask(__name__)
-connect("mongodb://vcm-3579.vm.duke.edu:27017/heart_rate_app")
+connect("mongodb://vcm-3584.vm.duke.edu:27017/Image_Folder")
 
 
 @app.route('/<email>/images', methods=['GET'])
@@ -85,14 +87,15 @@ def post_image():
     if not isinstance(image_name, str):
         return 'Image name must be string type, please reinput', 400
 
-    Save_Image_String(data_string, image_name + '.jpg')
+    save_image_string(data_string, image_name + '.jpg')
     # saves image into VCM since flask runs on VCM
     # following functions assume that testfile methods
     # already save to the path
     upload_time = datetime.datetime.now()
     start_time = time.time()
 
-    image = skimage.io.imread("mongodb://vcm-3579.vm.duke.edu:27017/heart_rate_app")
+    image = io.imread(image_name + '.jpg')
+
     # url will be changed later to vcm that is set up
 
     try:

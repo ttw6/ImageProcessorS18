@@ -7,3 +7,5 @@ pytest-pep8
 numpy
 scikit-image
 datetime
+matplotlib
+opencv-python

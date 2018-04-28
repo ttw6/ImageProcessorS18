@@ -1,6 +1,6 @@
 from pymodm import connect
 import models
-from testfile import *
+from Filtering import *
 import time
 import datetime
 import numpy
@@ -17,6 +17,7 @@ def create_user(email, image_name, upload_time):
     user = models.User(email, [], [], {'equalization': 0, 'contrast': 0, 'log': 0, 'reverse': 0}, [])
     user.image_names.append(image_name)
     user.upload_times.append(upload_time)
+    user.latency.append(0)
     user.save()
 
 

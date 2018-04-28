@@ -44,25 +44,26 @@ def save_image_string(base64_image, file_name):
         image_out.write(base64.b64decode(base64_image))
 
 
-def hist(img):
+def hist(file):
     """
     Adjusts image intensities to enhance contrast.
 
-    :param img: Image as numpy array
+    :param file: File path to image
     :return: Image array after histogram equalization
     """
-    # image = img_as_float(img)
+    img = io.imread(file)
     equal = exposure.equalize_hist(img)
     return equal
 
 
-def contrast_stretching(img):
+def contrast_stretching(file):
     """
     Adjusts contrast in image.
 
-    :param img: Image as numpy array
+    :param file: File path to image
     :return: Image array after contrast stretching
     """
+    img = io.imread(file)
     p2, p98 = np.percentile(img, (2, 98))
     contrast = exposure.rescale_intensity(img, in_range=(p2, p98))
     return contrast
@@ -124,14 +125,14 @@ def log_compression(file_name, file_type='.jpg'):
     return output
 
 
-def reverse_video(img):
+def reverse_video(file):
     """
     Transforms image to its negative
 
-    :param img: Image as numpy array
+    :param file: File path
     :return: .jpg image
     """
-    im = io.imread(img)
+    im = io.imread(file)
     im_inverted = util.invert(im)
-    output = io.imsave('invert_' + img, im_inverted)
+    output = io.imsave('invert_' + file, im_inverted)
     return output

@@ -2,7 +2,18 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 
-class TextField extends React.Component {
+const styles = {
+
+	        button: {
+				position: 'absolute',
+				top: '250px',
+				left: '150px',
+			},
+}
+
+
+
+class TextFieldUp extends React.Component {
     constructor() {
 	    super();
 	    this.state = {
@@ -21,14 +32,19 @@ class TextField extends React.Component {
 
     onButtonClick = (event) => {
          console.log(this.state.user_email);
-	 console.log(this.state.image_name); 
-	 this.props.onClickButton(this.state.user_email); // call the parent function
+         console.log(this.state.image_name); 
+	 this.props.onEmailClickButton(this.state.user_email, this.state.image_name);
+	 this.props.onNameClickButton(this.state.image_name);
     }
 
     render() {
 	    return (
-			    <div>
+			    
+			    <div style={styles.button}>
+			    Enter user email:
 			    <TextField value={this.state.user_email} onChange={this.onNameTextFieldChange}/>
+			    Enter image name:
+			    <TextField value={this.state.image_name} onChange={this.onImageNameTextFieldChange}/>
 			    <Button onClick={this.onButtonClick}>
 			       Commit
 
@@ -39,4 +55,4 @@ class TextField extends React.Component {
     }
 }
 
-export default TextField;
+export default TextFieldUp;

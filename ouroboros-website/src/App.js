@@ -7,7 +7,7 @@ import ButtonInfo from './ButtonInfo.js';
 import ButtonCreators from './ButtonCreators.js';
 import TeamInfo from './TeamPic.js';
 import Basic from './TrialUp.js';
-import TextField form './TextField.js';
+import TextFieldUp from './TextField.js';
 
 
 class App extends Component {
@@ -15,6 +15,8 @@ class App extends Component {
 		super();
 		this.state = {
 			"indicator": 1,
+			"user_email": "",
+			"file_name":"",
 		};
 	}
 
@@ -22,8 +24,14 @@ class App extends Component {
 		this.setState({"indicator": indicatorValue});
 	}
 
-	onTextButton = (textValues) => {
-		console.log(textValues);
+	onTextButton = (textEmail) => {
+		console.log(textEmail);
+		this.setState({"user_email": textEmail});
+	}
+
+	onNameButton = (Name) => {
+		console.log(Name);
+		this.setState({"file_name": Name});
 	}
 
   render() {
@@ -37,7 +45,7 @@ class App extends Component {
 				  <ButtonInfo onClickButton={this.onButtonChange}/>
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
 				  <Basic/> 
-				  <TextField onButtonClick={this.onTextButton}/>>
+				  <TextFieldUp onEmailClickButton={this.onTextButton} onNameClickButton={this.onNameButton}/>
 				  </div>
 				 );
 
@@ -53,11 +61,13 @@ class App extends Component {
 				  <ButtonInfo onClickButton={this.onButtonChange}/>
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
 				  
+				  <TextFieldUp onEmailClickButton={this.onTextButton} onNameClickButton={this.onNameButton}/>
+
 				  </div>
 				 );
 	  }
 
-	  else {
+	  else if (this.state.indicator ==3) {
 		  return(
 				  <div>
 
@@ -69,9 +79,8 @@ class App extends Component {
 				  <TeamInfo />
 				  </div>
 			);
-
-
 	  }
+
   }
 }
 

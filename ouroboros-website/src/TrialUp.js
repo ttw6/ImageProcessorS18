@@ -10,12 +10,12 @@ const styles = {
 			 height: '200px',
 			 textAlign: 'center',
 			 position: 'absolute',
-			 top: '200px',
+			 top: '400px',
 			 left: '150px',},
 	infoBox: {
 			 textAlign: 'center',
 			 position: 'absolute',
-			 top: '400px',
+			 top: '600px',
 			 left: '150px',}
 }
 
@@ -51,10 +51,13 @@ class Basic extends React.Component {
 				</Dropzone>
 				</div>
 
+				<div style={styles.infoBox}>
+
 				<h2> Dropped file info </h2>
 				<ul>
                                     {this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)}
 				</ul>
+				</div>
 
 					
 			    </section>

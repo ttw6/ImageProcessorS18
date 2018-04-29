@@ -44,13 +44,14 @@ def add_user_action(email, action_key, file_name, upload_time):
         user.user_action['reverse'] += 1
 
 
-def filter_image(email, action_key, vcm_image, start_time):
+def filter_image(email, action_key, file_name, vcm_image, start_time):
 
     """ The following function  queries for the email address of the user,
     filters the image based on the action_key given, computes the latency
     of the filtering option and then returns the filtered image
 
     :param email: email of the user to be queried
+    :param file_name: name of the image that is being uploaded
     :param action_key: the number designating the filtering option being performed
     :param vcm_image: the image that is stored on the path of the vcm
     :param start_time: the time at which the latency calculations begin
@@ -59,13 +60,13 @@ def filter_image(email, action_key, vcm_image, start_time):
 
     user = models.User.objects.raw({"_id": email}).first()
     if action_key == 1:
-        filtered_image = hist(vcm_image)
+        filtered_image = hist(file_name, vcm_image)
     elif action_key == 2:
-        filtered_image = contrast_stretching(vcm_image)
+        filtered_image = contrast_stretching(file_name, vcm_image)
     elif action_key == 3:
-        filtered_image = log_compression(vcm_image)
+        filtered_image = log_compression(file_name, vcm_image)
     else:
-        reverse_video()
+        reverse_video(file_name, vcm_image)
     latency = time.time() - start_time
     user.latency.append(latency)
     return filtered_image

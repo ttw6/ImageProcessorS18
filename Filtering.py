@@ -12,6 +12,7 @@ import base64
 def strip_ext(file_name):
     """
     Strip file extension.
+    
     :param file_name: Full file name
     :return: File name and extension
     """
@@ -22,6 +23,7 @@ def strip_ext(file_name):
 def image_string(file_name):
     """
     Encodes image in base64.
+
     :param file_name: Full file name
     :return: Base64 string
     """
@@ -33,6 +35,7 @@ def image_string(file_name):
 def save_image_string(base64_image, file_name):
     """
     Converts base64 string to .jpg.
+
     :param base64_image: Base64 string
     :param file_name: Full file name
     :return: .jpg image
@@ -41,26 +44,28 @@ def save_image_string(base64_image, file_name):
         image_out.write(base64.b64decode(base64_image))
 
 
-def hist(file):
+def hist(img):
     """
     Adjusts image intensities to enhance contrast.
-    :param file: File path to image
+
+    :param file: jpeg of image
     :return: Image array after histogram equalization
     """
-    img = io.imread(file)
     equal = exposure.equalize_hist(img)
-    return equal
+    img_equal = io.imsave(file_name + '_hist.jpg', equal)
+    return img_equal
 
 
-def contrast_stretching(file):
+def contrast_stretching(img):
     """
     Adjusts contrast in image.
-    :param file: File path to image
+
+    :param image: jpeg of image
     :return: Image array after contrast stretching
     """
-    img = io.imread(file)
     p2, p98 = np.percentile(img, (2, 98))
     contrast = exposure.rescale_intensity(img, in_range=(p2, p98))
+    img_contrast = io.imsave(file_name + '_contrast.jpg', contrast)
     return contrast
 
 
@@ -100,7 +105,7 @@ def show_img(img):
     plt.show()
 
 
-def log_compression(file_name, file_type='.jpg'):
+def log_compression(file_name, img):
     """
     Replace pixel value with its logarithm (effectively enhancing low intensity
     pixel values).
@@ -108,20 +113,18 @@ def log_compression(file_name, file_type='.jpg'):
     :param file_type: File type (default is .jpg)
     :return: output image (in .jpg)
     """
-    im = io.imread(file_name + file_type, as_grey=True)
-    # look into user warnings, triggered by color photos?
-    log_out = exposure.adjust_log(im)
-    output = io.imsave(file_name + '_log.jpg', log_out)
-    return output
+    #im = io.imread(file_name + file_type, as_grey=True)
+    log_out = exposure.adjust_log(img)
+    img_log = io.imsave(file_name + '_log.jpg', log_out)
+    return img_log
 
 
-def reverse_video(file):
+def reverse_video(img):
     """
     Transforms image to its negative
     :param file: File path
     :return: .jpg image
     """
-    im = io.imread(file)
-    im_inverted = util.invert(im)
-    output = io.imsave('invert_' + file, im_inverted)
-    return output
+    im_inverted = util.invert(img)
+    img_rev = io.imsave(file_name + '_rev.jpg', im_inverted)
+    return img_rev

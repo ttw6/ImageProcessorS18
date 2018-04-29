@@ -29,7 +29,8 @@ class TextField extends React.Component {
 	    return (
 			    <div>
 			    <TextField value={this.state.user_email} onChange={this.onNameTextFieldChange}/>
-			    <Button onClick
+			    <Button onClick={this.onButtonClick}>
+			       Commit
 
 			    </Button>
 

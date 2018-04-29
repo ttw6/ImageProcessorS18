@@ -7,6 +7,8 @@ import ButtonInfo from './ButtonInfo.js';
 import ButtonCreators from './ButtonCreators.js';
 import TeamInfo from './TeamPic.js';
 import Basic from './TrialUp.js';
+import TextField form './TextField.js';
+
 
 class App extends Component {
 	constructor() {
@@ -20,6 +22,10 @@ class App extends Component {
 		this.setState({"indicator": indicatorValue});
 	}
 
+	onTextButton = (textValues) => {
+		console.log(textValues);
+	}
+
   render() {
 	  if (this.state.indicator === 1) {
 		  return(
@@ -31,6 +37,7 @@ class App extends Component {
 				  <ButtonInfo onClickButton={this.onButtonChange}/>
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
 				  <Basic/> 
+				  <TextField onButtonClick={this.onTextButton}/>>
 				  </div>
 				 );
 

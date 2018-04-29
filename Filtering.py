@@ -1,8 +1,8 @@
-##import matplotlib
-##import matplotlib.pyplot as plt
-##import matplotlib.image as mpimg
+import matplotlib
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import numpy as np
-##import cv2
+import cv2
 from skimage import data, img_as_float
 from skimage import exposure, io, util
 import os
@@ -48,7 +48,8 @@ def hist(img):
     """
     Adjusts image intensities to enhance contrast.
 
-    :param file: jpeg of image
+    :parem file_name: file name of the image as used to save the image.
+    :param img: jpeg of image
     :return: Image array after histogram equalization
     """
     equal = exposure.equalize_hist(img)
@@ -109,8 +110,9 @@ def log_compression(file_name, img):
     """
     Replace pixel value with its logarithm (effectively enhancing low intensity
     pixel values).
-    :param file_name: Name of file
-    :param file_type: File type (default is .jpg)
+
+    :param file_name: file name of the image as used to save the image.
+    :param img: the jpeg image.
     :return: output image (in .jpg)
     """
     #im = io.imread(file_name + file_type, as_grey=True)
@@ -122,7 +124,9 @@ def log_compression(file_name, img):
 def reverse_video(img):
     """
     Transforms image to its negative
-    :param file: File path
+
+    :param file_name: file name of the image as used to save the image.
+    :param img: the jpeg image
     :return: .jpg image
     """
     im_inverted = util.invert(img)

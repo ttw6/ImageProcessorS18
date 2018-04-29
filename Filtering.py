@@ -8,43 +8,7 @@ from skimage import exposure, io, util
 import os
 import base64
 
-
-def strip_ext(file_name):
-    """
-    Strip file extension.
-    
-    :param file_name: Full file name
-    :return: File name and extension
-    """
-    [file_name, file_ext] = os.path.splitext(file_name)
-    return file_name, file_ext
-
-
-def image_string(file_name):
-    """
-    Encodes image in base64.
-
-    :param file_name: Full file name
-    :return: Base64 string
-    """
-    with open(file_name, 'rb') as image_file:
-        image_str = base64.b64encode(image_file.read())
-        return image_str
-
-
-def save_image_string(base64_image, file_name):
-    """
-    Converts base64 string to .jpg.
-
-    :param base64_image: Base64 string
-    :param file_name: Full file name
-    :return: .jpg image
-    """
-    with open(file_name, 'wb') as image_out:
-        image_out.write(base64.b64decode(base64_image))
-
-
-def hist(img):
+def hist(file_name, img):
     """
     Adjusts image intensities to enhance contrast.
 
@@ -57,7 +21,7 @@ def hist(img):
     return img_equal
 
 
-def contrast_stretching(img):
+def contrast_stretching(file_name, img):
     """
     Adjusts contrast in image.
 
@@ -70,7 +34,7 @@ def contrast_stretching(img):
     return contrast
 
 
-def raw_hist(img):
+def raw_hist(file_name, img):
     """
     Plots raw histogram
     :param img: Image array
@@ -79,7 +43,7 @@ def raw_hist(img):
     plt.show()
 
 
-def equalization_hist(img):
+def equalization_hist(file_name, img):
     """
     Plots equalized histogram
     :param img: Image array
@@ -88,7 +52,7 @@ def equalization_hist(img):
     ##plt.show()
     pass
 
-def contrast_hist(img):
+def contrast_hist(file_name, img):
     """
     Plots histogram after contrast stretching
     :param img: Image array
@@ -97,7 +61,7 @@ def contrast_hist(img):
     ##plt.show()
     pass
 
-def show_img(img):
+def show_img(file_name, img):
     """
     Displays image
     :param img: Image array
@@ -121,7 +85,7 @@ def log_compression(file_name, img):
     return img_log
 
 
-def reverse_video(img):
+def reverse_video(file_name, img):
     """
     Transforms image to its negative
 

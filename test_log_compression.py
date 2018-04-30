@@ -3,7 +3,7 @@ import pytest
 
 # def test_strip_ext():
 #    from Filtering import strip_ext
-    # Check functionality
+# Check functionality
 #    test_name = 'sample1.jpg'
 #    file_name, file_ext = strip_ext(test_name)
 #    assert file_name == 'sample1'

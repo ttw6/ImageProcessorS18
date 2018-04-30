@@ -68,7 +68,9 @@ class SimpleSelect extends React.Component {
 			 <FormHelperText>Hello</FormHelperText>
 			 </FormControl>
 			 </form>
-	 },
+			 );
+	 
+	 };
 }
 
 

@@ -5,10 +5,12 @@ import time
 import datetime
 import numpy
 from main import *
-from testfile import *
+from Filtering import *
+from skimage import data, img_as_float
+from skimage import exposure, io, util
 
 app = Flask(__name__)
-connect("mongodb://vcm-3579.vm.duke.edu:27017/heart_rate_app")
+connect("mongodb://vcm-3584.vm.duke.edu:27017/Image_Folder")
 
 
 @app.route('/<email>/images', methods=['GET'])
@@ -66,15 +68,15 @@ def post_image():
     r = request.get_json()
     try:
         filt = r['Filter']
-        # 1 is equalization, 2 is contrast, 3 is reverse video, 4 is log compression
+        # 1-qualization, 2-contrast, 3-reverse video, 4-log compression
         data_string = r['Data']
-        # dataString is the base64 string from the post method taken from react
+        # dataString is the base64 string 
         image_name = r['filename']
         # the name of the file that the user wants to name the image
         email = r['email']
         # email of user
     except:
-        return 'Input fields either missing or incorrect, double check before posting', 400
+        return 'Input fields either missing or incorrect', 400
 
     if not isinstance(filt, int):
         return 'Filter value must have key value between 1-4', 400
@@ -85,14 +87,15 @@ def post_image():
     if not isinstance(image_name, str):
         return 'Image name must be string type, please reinput', 400
 
-    Save_Image_String(data_string, image_name + '.jpg')
+    save_image_string(data_string, image_name + '.jpg')
     # saves image into VCM since flask runs on VCM
     # following functions assume that testfile methods
     # already save to the path
     upload_time = datetime.datetime.now()
     start_time = time.time()
 
-    image = skimage.io.imread("mongodb://vcm-3579.vm.duke.edu:27017/heart_rate_app")
+    image = io.imread(image_name + '.jpg')
+
     # url will be changed later to vcm that is set up
 
     try:
@@ -105,4 +108,3 @@ def post_image():
     image_string = base64.b64encode(filt_img)
     json_data = {"filtered_string": str(image_string)}
     return jsonify(json_data), 200
-

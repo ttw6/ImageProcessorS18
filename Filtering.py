@@ -8,9 +8,11 @@ from skimage import exposure, io, util
 import os
 import base64
 
+
 def hist(file_name, img):
     """
     Adjusts image intensities to enhance contrast.
+
     :parem file_name: file name of the image as used to save the image.
     :param img: jpeg of image
     :return: Image array after histogram equalization
@@ -34,6 +36,7 @@ def equalization_hist(file_name, img):
 def contrast_stretching(file_name, img):
     """
     Adjusts contrast in image.
+
     :param image: jpeg of image
     :return: Image array after contrast stretching
     """

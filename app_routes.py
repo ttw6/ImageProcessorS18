@@ -95,6 +95,7 @@ def post_image():
     start_time = time.time()
 
     image = io.imread(image_name + '.jpg')
+    raw_hist(image_name, image)
 
     # url will be changed later to vcm that is set up
 

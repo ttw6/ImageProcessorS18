@@ -9,6 +9,7 @@ import TeamInfo from './TeamPic.js';
 import Basic from './TrialUp.js';
 import TextFieldUp from './TextField.js';
 import TextFieldGet from './TextFieldGet.js';
+import SimpleSelect from './TransMenu.js';
 
 class App extends Component {
 	constructor() {
@@ -46,6 +47,7 @@ class App extends Component {
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
 				  <Basic/> 
 				  <TextFieldUp onEmailClickButton={this.onTextButton} onNameClickButton={this.onNameButton}/>
+				  <SimpleSelect />
 				  </div>
 				 );
 

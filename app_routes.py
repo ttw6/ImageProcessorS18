@@ -104,7 +104,7 @@ def post_image():
     except:
         create_user(email, image_name, upload_time)
 
-    filt_img = filter_image(email, filt, image, start_time)
+    filt_img = filter_image(email, filt, image_name, image, start_time)
     image_string = base64.b64encode(filt_img)
     json_data = {"filtered_string": str(image_string)}
     return jsonify(json_data), 200

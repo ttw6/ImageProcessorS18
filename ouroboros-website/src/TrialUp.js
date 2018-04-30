@@ -55,7 +55,7 @@ class Basic extends React.Component {
 
 				<h2> Dropped file info </h2>
 				<ul>
-                                    {this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)}
+                                    {this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bb {f.height} bytes</li>)}
 				</ul>
 				</div>
 

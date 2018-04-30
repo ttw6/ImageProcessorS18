@@ -11,5 +11,5 @@ def test_strip_ext():
 
 
 def test_log_comp():
-    from Filtering import Log_Compression
+    from Filtering import log_compression
     pass

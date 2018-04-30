@@ -8,7 +8,7 @@ import ButtonCreators from './ButtonCreators.js';
 import TeamInfo from './TeamPic.js';
 import Basic from './TrialUp.js';
 import TextFieldUp from './TextField.js';
-
+import TextFieldGet from './TextFieldGet.js';
 
 class App extends Component {
 	constructor() {
@@ -61,7 +61,7 @@ class App extends Component {
 				  <ButtonInfo onClickButton={this.onButtonChange}/>
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
 				  
-				  <TextFieldUp onEmailClickButton={this.onTextButton} onNameClickButton={this.onNameButton}/>
+				  <TextFieldGet />
 
 				  </div>
 				 );

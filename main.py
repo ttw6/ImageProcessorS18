@@ -14,7 +14,8 @@ def create_user(email, image_name, upload_time):
     :param upload_time: stores the time at which the user uploads ttheir image
     :return:
     """
-    user = models.User(email, [], [], {'equalization': 0, 'contrast': 0, 'log': 0, 'reverse': 0}, [])
+    user = models.User(email, [], [], 
+                       {'equalization': 0, 'contrast': 0, 'log': 0, 'reverse': 0}, [])
     user.image_names.append(image_name)
     user.upload_times.append(upload_time)
     user.latency.append(0)
@@ -27,7 +28,7 @@ def add_user_action(email, action_key, file_name, upload_time):
     :param file_name: name of the image that is being uploaded
     :param email: email queried for user
     :param action_key:  the key that corresponds to the filtering being done
-    :param upload_time: stores the time at which the image was uploaded by the user
+    :param upload_time: stores the time at which the image was uploaded
     :return:
     """
     user = models.User.objects.raw({"_id": email}).first()
@@ -52,10 +53,10 @@ def filter_image(email, action_key, file_name, vcm_image, start_time):
 
     :param email: email of the user to be queried
     :param file_name: name of the image that is being uploaded
-    :param action_key: the number designating the filtering option being performed
+    :param action_key: the number designating the filtering option
     :param vcm_image: the image that is stored on the path of the vcm
     :param start_time: the time at which the latency calculations begin
-    :return: filtered_image: returns the filtered image run through the filterings.py file
+    :return: filtered_image: returns the filtered image from filterings.py
     """
 
     user = models.User.objects.raw({"_id": email}).first()
@@ -70,4 +71,3 @@ def filter_image(email, action_key, file_name, vcm_image, start_time):
     latency = time.time() - start_time
     user.latency.append(latency)
     return filtered_image
-

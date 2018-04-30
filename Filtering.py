@@ -8,7 +8,6 @@ from skimage import exposure, io, util
 import os
 import base64
 
-
 def hist(file_name, img):
     """
     Adjusts image intensities to enhance contrast.
@@ -38,7 +37,6 @@ def contrast_stretching(file_name, img):
     :param image: jpeg of image
     :return: Image array after contrast stretching
     """
-
     p2, p98 = np.percentile(img, (2, 98))
     contrast = exposure.rescale_intensity(img, in_range=(p2, p98))
     img_contrast = io.imsave(file_name + '_contrast.jpg', contrast)
@@ -65,15 +63,6 @@ def raw_hist(file_name, img):
     plt.savefig(file_name + 'raw_hist.jpg')
 
 
-def show_img(file_name, img):
-    """
-    Displays image
-    :param img: Image array
-    """
-    plt.imshow(img)
-    plt.show()
-
-
 def log_compression(file_name, img):
     """
     Replace pixel value with its logarithm (effectively enhancing low intensity
@@ -82,7 +71,6 @@ def log_compression(file_name, img):
     :param img: the jpeg image.
     :return: output image (in .jpg)
     """
-
     log_out = exposure.adjust_log(img)
     img_log = io.imsave(file_name + '_log.jpg', log_out)
     return img_log
@@ -118,4 +106,3 @@ def rev_hist(file_name, img):
     """
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '4_hist.jpg')
-

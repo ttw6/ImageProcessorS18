@@ -9,3 +9,5 @@ scikit-image
 datetime
 matplotlib
 opencv-python
+flask-cors
+ipython

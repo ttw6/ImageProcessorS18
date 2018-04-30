@@ -1,6 +1,5 @@
 from main import *
 import requests
-from Filtering import *
 import base64
 
 connect("mongodb://localhost:27017/Image_Folder")  # open up connection to db
@@ -11,7 +10,7 @@ create_user(email="suyash@suyashkumar.com", image_name='poop', upload_time=datet
 with open('20180117_201745.jpg', 'rb') as image_file:
     image_string = base64.b64encode(image_file.read())
      
-str_ascii = image_string.encode('ascii')
+str_ascii = image_string.decode('ascii')
 
 input1 = {
     "Filter": 3,

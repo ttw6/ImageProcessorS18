@@ -14,8 +14,11 @@ def create_user(email, image_name, upload_time):
     :param upload_time: stores the time at which the user uploads ttheir image
     :return:
     """
-    user = models.User(email, [], [], 
-                       {'equalization': 0, 'contrast': 0, 'log': 0, 'reverse': 0}, [])
+    user = models.User(email, [], [],
+                       {'equalization': 0,
+                        'contrast': 0,
+                        'log': 0,
+                        'reverse': 0}, [])
     user.image_names.append(image_name)
     user.upload_times.append(upload_time)
     user.latency.append(0)

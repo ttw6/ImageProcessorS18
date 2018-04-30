@@ -8,6 +8,7 @@ from skimage import exposure, io, util
 import os
 import base64
 
+
 def hist(file_name, img):
     """
     Adjusts image intensities to enhance contrast.
@@ -54,7 +55,7 @@ def contrast_hist(file_name, img):
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '2_hist.jpg')
 
-    
+
 def raw_hist(file_name, img):
     """
     Plots raw histogram

@@ -31,6 +31,9 @@ def equalization_hist(file_name, img):
     """
     plt.hist(img.ravel(), 256, [0, 1])
     plt.savefig(file_name + '1_hist.jpg')
+    plt.clf()
+    plt.cla()
+    plt.close()
 
 
 def contrast_stretching(file_name, img):
@@ -55,6 +58,9 @@ def contrast_hist(file_name, img):
     """
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '2_hist.jpg')
+    plt.clf()
+    plt.cla()
+    plt.close()
 
 
 def raw_hist(file_name, img):
@@ -65,6 +71,9 @@ def raw_hist(file_name, img):
     """
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + 'raw_hist.jpg')
+    plt.clf()
+    plt.cla()
+    plt.close()
 
 
 def log_compression(file_name, img):
@@ -89,6 +98,9 @@ def log_hist(file_name, img):
     """
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '3_hist.jpg')
+    plt.clf()
+    plt.cla()
+    plt.close()
 
 
 def reverse_video(file_name, img):
@@ -112,6 +124,9 @@ def rev_hist(file_name, img):
     """
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '4_hist.jpg')
+    plt.clf()
+    plt.cla()
+    plt.close()
 
 
 def strip_header(base64_str):

@@ -70,7 +70,7 @@ def post_image():
         filt = r['Filter']
         # 1-qualization, 2-contrast, 3-reverse video, 4-log compression
         data_string = r['Data']
-        # dataString is the base64 string 
+        # dataString is the base64 string
         image_name = r['filename']
         # the name of the file that the user wants to name the image
         email = r['email']

@@ -42,6 +42,7 @@ def contrast_stretching(file_name, img):
     """
     p2, p98 = np.percentile(img, (2, 98))
     contrast = exposure.rescale_intensity(img, in_range=(p2, p98))
+    contrast_hist(file_name, contrast)
     img_contrast = io.imsave(file_name + '_contrast.jpg', contrast)
     return contrast
 
@@ -75,6 +76,7 @@ def log_compression(file_name, img):
     :return: output image (in .jpg)
     """
     log_out = exposure.adjust_log(img)
+    log_hist(file_name, log_out)
     img_log = io.imsave(file_name + '_log.jpg', log_out)
     return img_log
 
@@ -97,6 +99,7 @@ def reverse_video(file_name, img):
     :return: .jpg image
     """
     im_inverted = util.invert(img)
+    rev_hist(file_name, im_inverted)
     img_rev = io.imsave(file_name + '_rev.jpg', im_inverted)
     return img_rev
 

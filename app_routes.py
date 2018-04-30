@@ -68,15 +68,15 @@ def post_image():
     r = request.get_json()
     try:
         filt = r['Filter']
-        # 1 is equalization, 2 is contrast, 3 is reverse video, 4 is log compression
+        # 1-qualization, 2-contrast, 3-reverse video, 4-log compression
         data_string = r['Data']
-        # dataString is the base64 string from the post method taken from react
+        # dataString is the base64 string 
         image_name = r['filename']
         # the name of the file that the user wants to name the image
         email = r['email']
         # email of user
     except:
-        return 'Input fields either missing or incorrect, double check before posting', 400
+        return 'Input fields either missing or incorrect', 400
 
     if not isinstance(filt, int):
         return 'Filter value must have key value between 1-4', 400
@@ -108,4 +108,3 @@ def post_image():
     image_string = base64.b64encode(filt_img)
     json_data = {"filtered_string": str(image_string)}
     return jsonify(json_data), 200
-

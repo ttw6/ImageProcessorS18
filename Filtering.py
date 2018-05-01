@@ -20,7 +20,7 @@ def hist(file_name, img):
     """
     equal = exposure.equalize_hist(img)
     equalization_hist(file_name, equal)
-    img_equal = io.imsave(file_name + '_hist.jpg', equal)
+    img_equal = io.imsave(file_name + '_equal.jpg', equal)
     return equal
 
 

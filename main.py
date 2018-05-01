@@ -46,7 +46,7 @@ def add_user_action(email, action_key, file_name, upload_time):
         user.user_action['log'] += 1
     else:
         user.user_action['reverse'] += 1
-
+    user.save()
 
 def filter_image(email, action_key, file_name, vcm_image, start_time):
 

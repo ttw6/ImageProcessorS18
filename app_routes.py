@@ -126,7 +126,19 @@ def post_image():
         create_user(email, image_name, upload_time)
 
     filt_img = filter_image(email, filt, image_name, image, start_time)
-    image_string = base64.b64encode(filt_img)
+    
+    if filt == 1:
+        extension_name = '_hist'
+    elif filt == 2:
+        extension_name = '_contrast'
+    elif filt == 3:
+        extension_name = '_log'
+    else:
+        extension_name = '_rev'
+   
+    image_filtered = io.imread(image_name + extension_name +'.jpg')
+    image_string = base64.b64encode(image_filtered)
+    
     image_string_ascii = image_string.decode('ascii')
     json_data = {"filtered_string": image_string_ascii}
     return jsonify(json_data), 200

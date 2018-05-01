@@ -30,7 +30,7 @@ def equalization_hist(file_name, img):
     :param img: Image array
     :param file_name: name the user wnats to save image as
     """
-    return
+
     plt.hist(img.ravel(), 256, [0, 1])
     plt.savefig(file_name + '1_hist.jpg')
     plt.clf()

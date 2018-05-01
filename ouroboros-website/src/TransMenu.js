@@ -26,8 +26,6 @@ class SimpleSelect extends React.Component {
 	constructor() {
 		super();
 	        this.state = {
-		      "user_email": '',
-		      "image_name": '',
 		      "filter":[],
 
 			    };
@@ -36,8 +34,8 @@ class SimpleSelect extends React.Component {
 
 	  handleChange = event => {
 		  this.setState({ [event.target.name]: event.target.value });
-		  console.log(this.state.filter);
-		  console.log(this.state.image_name);
+		  this.props.onChangeSelect(this.state.filter);
+
          };
 
 	 render() {
@@ -59,14 +57,9 @@ class SimpleSelect extends React.Component {
 			 <MenuItem value={3}>Log Compression</MenuItem>
 			 <MenuItem value={4}>Reverse Video</MenuItem>
 			 </Select>
-			 <FormHelperText>Poop important helper text</FormHelperText>
+			 <FormHelperText> Please select the transformation you want to apply</FormHelperText>
 			 </FormControl>
 			 
-			 <FormControl className={classes.formControl}>
-			 <InputLabel htmlFor="name-input">Name</InputLabel>
-			 <Input id="name-input" />
-			 <FormHelperText>Hello</FormHelperText>
-			 </FormControl>
 			 </form>
 			 );
 	 

@@ -6,10 +6,10 @@ import ButtonHome from './ButtonHome.js';
 import ButtonInfo from './ButtonInfo.js';
 import ButtonCreators from './ButtonCreators.js';
 import TeamInfo from './TeamPic.js';
-import Basic from './TrialUp.js';
+// import Basic from './TrialUp.js';
 import TextFieldUp from './TextField.js';
 import TextFieldGet from './TextFieldGet.js';
-import SimpleSelect from './TransMenu.js';
+// import SimpleSelect from './TransMenu.js';
 
 class App extends Component {
 	constructor() {
@@ -45,9 +45,8 @@ class App extends Component {
 				  <ButtonHome onClickButton={this.onButtonChange}/>
 				  <ButtonInfo onClickButton={this.onButtonChange}/>
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
-				  <Basic/> 
-				  <TextFieldUp onEmailClickButton={this.onTextButton} onNameClickButton={this.onNameButton}/>
-				  <SimpleSelect />
+				  <TextFieldUp />
+				  
 				  </div>
 				 );
 

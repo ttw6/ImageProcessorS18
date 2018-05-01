@@ -38,6 +38,7 @@ class Basic extends React.Component {
 			reader.onloadend = () => {
 				console.log(reader.result);	
 				this.setState({currentImageString: reader.result});
+				this.props.onImageUp(this.state.currentImageString);
 			  }
 	  }
 

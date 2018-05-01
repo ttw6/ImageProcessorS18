@@ -73,4 +73,5 @@ def filter_image(email, action_key, file_name, vcm_image, start_time):
         filtered_image = reverse_video(file_name, vcm_image)
     latency = time.time() - start_time
     user.latency.append(latency)
+    user.save()
     return filtered_image

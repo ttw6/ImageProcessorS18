@@ -106,8 +106,8 @@ def post_image():
         return 'Image name must be string type, please reinput', 400
 
     
-    image_string_stripped = strip_header(data_string)
-    save_image_string(image_string_stripped, image_name + '.jpg')
+    ##image_string_stripped = strip_header(data_string)
+    save_image_string(data_string, image_name + '.jpg')
     # saves image into VCM since flask runs on VCM
     # following functions assume that testfile methods
     # already save to the path
@@ -129,12 +129,16 @@ def post_image():
     
     if filt == 1:
         extension_name = '_hist'
+        hist_extension = '1_hist'
     elif filt == 2:
         extension_name = '_contrast'
+        hist_extension = '2_hist'
     elif filt == 3:
         extension_name = '_log'
+        hist_extension = '3_hist'
     else:
         extension_name = '_rev'
+        hist_extension = '4_hist'
    
     with open(image_name + extension_name +'.jpg', 'rb') as image_file:
         image_str = base64.b64encode(image_file.read())

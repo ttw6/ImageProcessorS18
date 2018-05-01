@@ -1,7 +1,7 @@
-#import matplotlib
-#matplotlib.use('Agg')
-#import matplotlib.pyplot as plt
-#import matplotlib.image as mpimg
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import numpy as np
 #import cv2
 from skimage import data, img_as_float

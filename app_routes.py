@@ -136,9 +136,9 @@ def post_image():
     else:
         extension_name = '_rev'
    
-    image_filtered = io.imread(image_name + extension_name +'.jpg')
-    image_string = base64.b64encode(image_filtered)
+    with open(image_name + extension_name +'.jpg', 'rb') as image_file:
+        image_str = base64.b64encode(image_file.read())
     
-    image_string_ascii = image_string.decode('ascii')
+    image_string_ascii = image_str.decode('ascii')
     json_data = {"filtered_string": image_string_ascii}
     return jsonify(json_data), 200

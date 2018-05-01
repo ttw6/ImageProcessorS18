@@ -105,17 +105,19 @@ def post_image():
     if not isinstance(image_name, str):
         return 'Image name must be string type, please reinput', 400
 
-    save_image_string(data_string, image_name + '.jpg')
+    
+    image_string_stripped = strip_header(data_string)
+    save_image_string(image_string_stripped, image_name + '.jpg')
     # saves image into VCM since flask runs on VCM
     # following functions assume that testfile methods
     # already save to the path
+
     upload_time = datetime.datetime.now()
     start_time = time.time()
 
     image = io.imread(image_name + '.jpg')
     raw_hist(image_name, image)
 
-    # url will be changed later to vcm that is set up
 
     try:
         add_user_action(email, filt, image_name, upload_time)

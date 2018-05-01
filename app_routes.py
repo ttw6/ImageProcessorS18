@@ -114,7 +114,6 @@ def post_image():
 
     image = io.imread(image_name + '.jpg')
     raw_hist(image_name, image)
-    print(image)
 
     # url will be changed later to vcm that is set up
 

@@ -15,9 +15,9 @@ with open('20180117_201745.jpg', 'rb') as image_file:
 str_ascii = image_string.decode('ascii')
 
 input1 = {
-    "Filter": 3,
+    "Filter": 2,
     "Data": str_ascii,
-    "filename": "potato2",
+    "filename": "potato7",
     "email": "suyash@suyashkumar.com",
 }
 

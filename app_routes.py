@@ -8,8 +8,10 @@ from main import *
 from Filtering import *
 from skimage import data, img_as_float
 from skimage import exposure, io, util
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 connect("mongodb://vcm-3584.vm.duke.edu:27017/Image_Folder")
 
 

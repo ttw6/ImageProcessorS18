@@ -11,4 +11,3 @@ ipython
 scipy
 matplotlib
 opencv-python
-

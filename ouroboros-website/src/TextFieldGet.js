@@ -22,6 +22,7 @@ class TextFieldGet extends React.Component {
 		    "im_names":"",
 		    "user_action": "",
 		    "latency": "",
+		    "time_stamp": "",
 		 
 	    }
 	}
@@ -44,6 +45,11 @@ class TextFieldGet extends React.Component {
 		    console.log(response.status);
 		    this.setState({"latency": JSON.stringify(response.data)});
 	    });
+
+	    axios.get("http://vcm-3584.vm.duke.edu:5000/" + this.state.user_email + "/timestamps").then( (response) =>{
+		    console.log(response.status);
+		    this.setState({"time_stamp": JSON.stringify(response.data)});
+	    });
     }
 
     render() {
@@ -58,6 +64,7 @@ class TextFieldGet extends React.Component {
 			     {this.state.im_names}
 			     {this.state.user_action}
 			     {this.state.latency}
+			     {this.state.time_stamp}
 			     </div>
 		   );
     }

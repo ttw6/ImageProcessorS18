@@ -26,6 +26,7 @@ class TextFieldUp extends React.Component {
 		    "image_data": "",
 		    "filter": [],
 		    "filt_image": "",
+		    "hist_image": "",
 	    }
 	}
 
@@ -61,12 +62,13 @@ class TextFieldUp extends React.Component {
 	            Data: this.state.image_data ,
 	            Filter: this.state.filter  }).then( (response) =>{
 		    console.log(response.status);
-		    this.setState({"filt_image": JSON.stringify(response.data)});
+		    this.setState({"filt_image": response.data.filtered_string});
+		    this.setState({"hist_image": response.data.hist_string});
 	    });
     }
-    // <img src={'data:image/jpeg;base64,' + {this.state.filt_image} }  />
 
     render() {
+	    console.log(this.state);
 	    return (
 			    
 			    <div style={styles.button}>
@@ -81,7 +83,9 @@ class TextFieldUp extends React.Component {
 			    </Button>
 			    {this.state.filt_image}
 			    
-                            <img src={'data:image/jpeg;base64,' + this.state.filt_image.filtered_string} width='460' height='445'  />
+                            <img src={'data:image/jpeg;base64,' + this.state.filt_image} width='460' height='445'  />
+			    <img src={'data:image/jpeg;base64,' + this.state.hist_image} width='460' height='445' />
+			   
 			    </div>
 		   );
     }

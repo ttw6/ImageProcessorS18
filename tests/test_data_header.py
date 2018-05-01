@@ -1,5 +1,10 @@
 import pytest
-from data_header import strip_header
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Code to automatically find parent directory: https://stackoverflow.com/
+# questions/16780014/import-file-from-parent-directory
+from Filtering import strip_header
 
 
 def test_strip_header():

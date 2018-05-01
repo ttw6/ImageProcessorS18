@@ -11,3 +11,5 @@ ipython
 scipy
 matplotlib
 opencv-python
+flask-cors
+ipython

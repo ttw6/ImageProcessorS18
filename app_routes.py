@@ -145,9 +145,14 @@ def post_image():
     
     with open(image_name + hist_extension + '.jpg', 'rb') as image_file_hist:
         hist_str = base64.b64encode(image_file_hist.read())
+
+    with open(image_name + 'raw_hist.jpg', 'rb') as raw_file:
+        raw_hist_str = base64.b64encode(raw_file.read()))
   
     image_string_ascii = image_str.decode('ascii')
     hist_string_ascii = hist_str.decode('ascii')
+    raw_hist_str = raw_hist_str.decode('ascii')
     json_data = {"filtered_string": image_string_ascii,
-                 "hist_string": hist_string_ascii }
+                 "hist_string": hist_string_ascii,
+                 "raw_hist": raw_hist_str}
     return jsonify(json_data), 200

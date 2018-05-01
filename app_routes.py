@@ -127,5 +127,6 @@ def post_image():
 
     filt_img = filter_image(email, filt, image_name, image, start_time)
     image_string = base64.b64encode(filt_img)
-    json_data = {"filtered_string": str(image_string)}
+    image_string_ascii = image_string.decode('ascii')
+    json_data = {"filtered_string": image_string_ascii}
     return jsonify(json_data), 200

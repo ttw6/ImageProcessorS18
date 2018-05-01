@@ -70,7 +70,7 @@ def filter_image(email, action_key, file_name, vcm_image, start_time):
     elif action_key == 3:
         filtered_image = log_compression(file_name, vcm_image)
     else:
-        reverse_video(file_name, vcm_image)
+        filtered_image = reverse_video(file_name, vcm_image)
     latency = time.time() - start_time
     user.latency.append(latency)
     return filtered_image

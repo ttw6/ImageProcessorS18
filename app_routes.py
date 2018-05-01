@@ -92,7 +92,6 @@ def post_image():
         image_name = r['filename']
         # the name of the file that the user wants to name the image
         email = r['email']
-        print(r['Data'])
         # email of user
     except:
         return 'Input fields either missing or incorrect', 400

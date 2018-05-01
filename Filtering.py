@@ -57,8 +57,7 @@ def contrast_hist(file_name, img):
     Plots histogram after contrast stretching
     :param img: Image array
     :param file_name: name user wants to save image as
-    """
-    return
+    """    
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '2_hist.jpg')
     plt.clf()
@@ -72,7 +71,6 @@ def raw_hist(file_name, img):
     :param img: Image array
     :param file_name: name of file user wants to save as
     """
-    return
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + 'raw_hist.jpg')
     plt.clf()
@@ -100,7 +98,6 @@ def log_hist(file_name, img):
     :param img: Image array
     :param file_name: name user wants to save image as
     """
-    return
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '3_hist.jpg')
     plt.clf()
@@ -126,8 +123,7 @@ def rev_hist(file_name, img):
     Plots histogram after contrast stretching
     :param img: Image array
     :param file_name: name user wants to save image as
-    """
-    return
+    """   
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '4_hist.jpg')
     plt.clf()

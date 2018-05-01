@@ -12,11 +12,12 @@ create_user(email="suyash@suyashkumar.com", image_name='poop',
 with open('20180117_201745.jpg', 'rb') as image_file:
     image_string = base64.b64encode(image_file.read())
 
+image_s = image_string.decode('ascii')
 
 input1 = {
     "Filter": 3,
-    "Data": str(image_string),
-    "filename": "potato",
+    "Data": image_s,
+    "filename": "potato3",
     "email": "suyash@suyashkumar.com",
 }
 

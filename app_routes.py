@@ -30,6 +30,21 @@ def images(email):
         return jsonify(data), 404
 
 
+@app.route('/<email>/timestamps', methods=['GET'])
+def images(email):
+    """Function is a GET request that allows user to
+    access all upload times of photos of given user
+    :param email: user email to query data from"""
+    mail = "{0}".format(email)
+    try:
+        user = models.User.objects.raw({"_id": mail}).first()
+        data = {'Uploaded Images': str(user.upload_times)}
+        return jsonify(data), 200
+    except:
+        data = 'User does not exist'
+        return jsonify(data), 404
+
+
 @app.route('/<email>/user_action', methods=['GET'])
 def user_stats(email):
     """Function is a GET request that allows user to
@@ -70,15 +85,15 @@ def post_image():
     r = request.get_json()
     try:
         filt = r['Filter']
-        # 1 is equalization, 2 is contrast, 3 is reverse video, 4 is log compression
+        # 1-qualization, 2-contrast, 3-reverse video, 4-log compression
         data_string = r['Data']
-        # dataString is the base64 string from the post method taken from react
+        # dataString is the base64 string
         image_name = r['filename']
         # the name of the file that the user wants to name the image
         email = r['email']
         # email of user
     except:
-        return 'Input fields either missing or incorrect, double check before posting', 400
+        return 'Input fields either missing or incorrect', 400
 
     if not isinstance(filt, int):
         return 'Filter value must have key value between 1-4', 400
@@ -97,6 +112,7 @@ def post_image():
     start_time = time.time()
 
     image = io.imread(image_name + '.jpg')
+    raw_hist(image_name, image)
 
     # url will be changed later to vcm that is set up
 
@@ -106,8 +122,7 @@ def post_image():
     except:
         create_user(email, image_name, upload_time)
 
-    filt_img = filter_image(email, filt, image, start_time)
+    filt_img = filter_image(email, filt, image_name, image, start_time)
     image_string = base64.b64encode(filt_img)
     json_data = {"filtered_string": str(image_string)}
     return jsonify(json_data), 200
-

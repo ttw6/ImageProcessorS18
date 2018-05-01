@@ -28,6 +28,21 @@ def images(email):
         return jsonify(data), 404
 
 
+@app.route('/<email>/timestamps', methods=['GET'])
+def images(email):
+    """Function is a GET request that allows user to
+    access all upload times of photos of given user
+    :param email: user email to query data from"""
+    mail = "{0}".format(email)
+    try:
+        user = models.User.objects.raw({"_id": mail}).first()
+        data = {'Uploaded Images': str(user.upload_times)}
+        return jsonify(data), 200
+    except:
+        data = 'User does not exist'
+        return jsonify(data), 404
+
+
 @app.route('/<email>/user_action', methods=['GET'])
 def user_stats(email):
     """Function is a GET request that allows user to

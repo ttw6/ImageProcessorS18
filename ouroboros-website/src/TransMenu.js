@@ -33,9 +33,9 @@ class SimpleSelect extends React.Component {
 
 
 	  handleChange = event => {
-		  this.setState({ [event.target.name]: event.target.value });
-		  this.props.onChangeSelect(this.state.filter);
-
+		  this.setState({ [event.target.name]: event.target.value }, 
+		          () => {this.props.onChangeSelect(this.state.filter)}
+		                 );
          };
 
 	 render() {

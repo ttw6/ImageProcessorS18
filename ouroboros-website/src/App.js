@@ -6,10 +6,8 @@ import ButtonHome from './ButtonHome.js';
 import ButtonInfo from './ButtonInfo.js';
 import ButtonCreators from './ButtonCreators.js';
 import TeamInfo from './TeamPic.js';
-// import Basic from './TrialUp.js';
 import TextFieldUp from './TextField.js';
 import TextFieldGet from './TextFieldGet.js';
-// import SimpleSelect from './TransMenu.js';
 
 class App extends Component {
 	constructor() {
@@ -25,15 +23,6 @@ class App extends Component {
 		this.setState({"indicator": indicatorValue});
 	}
 
-	onTextButton = (textEmail) => {
-		console.log(textEmail);
-		this.setState({"user_email": textEmail});
-	}
-
-	onNameButton = (Name) => {
-		console.log(Name);
-		this.setState({"file_name": Name});
-	}
 
   render() {
 	  if (this.state.indicator === 1) {

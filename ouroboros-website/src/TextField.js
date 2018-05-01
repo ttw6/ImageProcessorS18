@@ -39,18 +39,12 @@ class TextFieldUp extends React.Component {
 	    console.log(this.state.image_name);
     }
 
-    onButtonClick = (event) => {
-         console.log(this.state.user_email);
-         console.log(this.state.image_name); 
-	 console.log(this.state.filter);
-	 this.props.onEmailClickButton(this.state.user_email);
-	 this.props.onNameClickButton(this.state.image_name);
-    }
 
 
     onSelectChange = (values) => {
-	     this.setState({"filter": values });
-	     console.log(this.state.filter);
+	     this.setState({"filter": values }, 
+		() => {console.log(this.state.filter)}
+		);
 		  
      }
 
@@ -70,6 +64,7 @@ class TextFieldUp extends React.Component {
 		    this.setState({"filt_image": JSON.stringify(response.data)});
 	    });
     }
+    // <img src={'data:image/jpeg;base64,' + {this.state.filt_image} }  />
 
     render() {
 	    return (
@@ -84,7 +79,9 @@ class TextFieldUp extends React.Component {
 			    <Button onClick={this.fetchDataPost}>
 			       COMMIT
 			    </Button>
-			   
+			    {this.state.filt_image}
+			    
+                            <img src={'data:image/jpeg;base64,' + this.state.filt_image.filtered_string} width='460' height='445'  />
 			    </div>
 		   );
     }

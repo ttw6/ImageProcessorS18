@@ -17,6 +17,7 @@ def hist(file_name, img):
     :param img: jpeg of image
     :return: Image array after histogram equalization
     """
+    pass
     equal = exposure.equalize_hist(img)
     equalization_hist(file_name, equal)
     img_equal = io.imsave(file_name + '_hist.jpg', equal)
@@ -29,6 +30,7 @@ def equalization_hist(file_name, img):
     :param img: Image array
     :param file_name: name the user wnats to save image as
     """
+    pass
     plt.hist(img.ravel(), 256, [0, 1])
     plt.savefig(file_name + '1_hist.jpg')
     plt.clf()
@@ -56,6 +58,7 @@ def contrast_hist(file_name, img):
     :param img: Image array
     :param file_name: name user wants to save image as
     """
+    pass
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '2_hist.jpg')
     plt.clf()
@@ -69,6 +72,7 @@ def raw_hist(file_name, img):
     :param img: Image array
     :param file_name: name of file user wants to save as
     """
+    pass
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + 'raw_hist.jpg')
     plt.clf()
@@ -96,6 +100,7 @@ def log_hist(file_name, img):
     :param img: Image array
     :param file_name: name user wants to save image as
     """
+    pass
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '3_hist.jpg')
     plt.clf()
@@ -122,6 +127,7 @@ def rev_hist(file_name, img):
     :param img: Image array
     :param file_name: name user wants to save image as
     """
+    pass
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '4_hist.jpg')
     plt.clf()

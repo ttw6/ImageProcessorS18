@@ -31,7 +31,7 @@ def images(email):
 
 
 @app.route('/<email>/timestamps', methods=['GET'])
-def images(email):
+def images_time(email):
     """Function is a GET request that allows user to
     access all upload times of photos of given user
     :param email: user email to query data from"""

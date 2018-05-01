@@ -17,11 +17,10 @@ def hist(file_name, img):
     :param img: jpeg of image
     :return: Image array after histogram equalization
     """
-    return
     equal = exposure.equalize_hist(img)
     equalization_hist(file_name, equal)
     img_equal = io.imsave(file_name + '_hist.jpg', equal)
-    return img_equal
+    return equal
 
 
 def equalization_hist(file_name, img):
@@ -91,7 +90,7 @@ def log_compression(file_name, img):
     log_out = exposure.adjust_log(img)
     log_hist(file_name, log_out)
     img_log = io.imsave(file_name + '_log.jpg', log_out)
-    return img_log
+    return log_out
 
 
 def log_hist(file_name, img):
@@ -118,7 +117,7 @@ def reverse_video(file_name, img):
     im_inverted = util.invert(img)
     rev_hist(file_name, im_inverted)
     img_rev = io.imsave(file_name + '_rev.jpg', im_inverted)
-    return img_rev
+    return im_inverted
 
 
 def rev_hist(file_name, img):

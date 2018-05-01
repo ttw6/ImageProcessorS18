@@ -9,6 +9,7 @@ from Filtering import *
 from skimage import data, img_as_float
 from skimage import exposure, io, util
 from flask_cors import CORS
+from ImageEncoding import *
 
 app = Flask(__name__)
 CORS(app)
@@ -91,6 +92,7 @@ def post_image():
         image_name = r['filename']
         # the name of the file that the user wants to name the image
         email = r['email']
+        print(r['Data'])
         # email of user
     except:
         return 'Input fields either missing or incorrect', 400
@@ -113,6 +115,7 @@ def post_image():
 
     image = io.imread(image_name + '.jpg')
     raw_hist(image_name, image)
+    print(image)
 
     # url will be changed later to vcm that is set up
 

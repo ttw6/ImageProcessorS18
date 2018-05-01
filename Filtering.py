@@ -1,8 +1,8 @@
-import matplotlib
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+#import matplotlib
+#import matplotlib.pyplot as plt
+#import matplotlib.image as mpimg
 import numpy as np
-import cv2
+#import cv2
 from skimage import data, img_as_float
 from skimage import exposure, io, util
 import os
@@ -17,7 +17,7 @@ def hist(file_name, img):
     :param img: jpeg of image
     :return: Image array after histogram equalization
     """
-    pass
+    return
     equal = exposure.equalize_hist(img)
     equalization_hist(file_name, equal)
     img_equal = io.imsave(file_name + '_hist.jpg', equal)
@@ -30,13 +30,13 @@ def equalization_hist(file_name, img):
     :param img: Image array
     :param file_name: name the user wnats to save image as
     """
-    pass
+    return
     plt.hist(img.ravel(), 256, [0, 1])
     plt.savefig(file_name + '1_hist.jpg')
     plt.clf()
     plt.cla()
     plt.close()
-
+    
 
 def contrast_stretching(file_name, img):
     """
@@ -58,7 +58,7 @@ def contrast_hist(file_name, img):
     :param img: Image array
     :param file_name: name user wants to save image as
     """
-    pass
+    return
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '2_hist.jpg')
     plt.clf()
@@ -72,7 +72,7 @@ def raw_hist(file_name, img):
     :param img: Image array
     :param file_name: name of file user wants to save as
     """
-    pass
+    return
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + 'raw_hist.jpg')
     plt.clf()
@@ -100,7 +100,7 @@ def log_hist(file_name, img):
     :param img: Image array
     :param file_name: name user wants to save image as
     """
-    pass
+    return
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '3_hist.jpg')
     plt.clf()
@@ -127,7 +127,7 @@ def rev_hist(file_name, img):
     :param img: Image array
     :param file_name: name user wants to save image as
     """
-    pass
+    return
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '4_hist.jpg')
     plt.clf()

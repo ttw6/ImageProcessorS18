@@ -1,4 +1,5 @@
 def strip_header(base64_str):
+
     """
     Strips the data url header
 

@@ -2,6 +2,7 @@ import base64
 
 
 def encode_image_string(file_name):
+
     """
     Encodes image in base64.
 
@@ -14,6 +15,7 @@ def encode_image_string(file_name):
 
 
 def save_image_string(base64_image, file_name):
+
     """
     Converts base64 string to .jpg.
 

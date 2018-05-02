@@ -10,6 +10,7 @@ import base64  # nopep8
 
 
 def hist(file_name, img):
+
     """
     Adjusts image intensities to enhance contrast.
 
@@ -24,6 +25,7 @@ def hist(file_name, img):
 
 
 def equalization_hist(file_name, img):
+
     """
     Saves equalized histogram
     :param img: Image array
@@ -38,6 +40,7 @@ def equalization_hist(file_name, img):
 
 
 def contrast_stretching(file_name, img):
+
     """
     Adjusts contrast in image.
 
@@ -52,6 +55,7 @@ def contrast_stretching(file_name, img):
 
 
 def contrast_hist(file_name, img):
+
     """
     Plots histogram after contrast stretching
     :param img: Image array
@@ -65,6 +69,7 @@ def contrast_hist(file_name, img):
 
 
 def raw_hist(file_name, img):
+
     """
     Plots raw histogram
     :param img: Image array
@@ -78,6 +83,7 @@ def raw_hist(file_name, img):
 
 
 def log_compression(file_name, img):
+
     """
     Replace pixel value with its logarithm (effectively enhancing low intensity
     pixel values).
@@ -92,6 +98,7 @@ def log_compression(file_name, img):
 
 
 def log_hist(file_name, img):
+
     """
     Plots histogram after contrast stretching
     :param img: Image array
@@ -105,6 +112,7 @@ def log_hist(file_name, img):
 
 
 def reverse_video(file_name, img):
+
     """
     Transforms image to its negative
     :param file_name: file name of the image as used to save the image.
@@ -118,6 +126,7 @@ def reverse_video(file_name, img):
 
 
 def rev_hist(file_name, img):
+
     """
     Plots histogram after contrast stretching
     :param img: Image array
@@ -131,6 +140,7 @@ def rev_hist(file_name, img):
 
 
 def strip_header(base64_str):
+
     """
     Strips the data url header
     :param base64_str: Raw base64 string

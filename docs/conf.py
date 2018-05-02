@@ -129,7 +129,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'OuroborosImageProcessor.tex', 'Ouroboros Image Processor Documentation',
+    (master_doc, 'OuroborosImageProcessor.tex', 'Ouroboros Image Processor Documentation',  # nopep8
      'Alex Sheu, Petek Sener, Tiffany Wu', 'manual'),  # nopep8
 ]
 
@@ -139,7 +139,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'ouroborosimageprocessor', 'Ouroboros Image Processor Documentation',
+    (master_doc, 'ouroborosimageprocessor', 'Ouroboros Image Processor Documentation',  # nopep8
      [author], 1)  # nopep8
 ]
 
@@ -150,8 +150,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'OuroborosImageProcessor', 'Ouroboros Image Processor Documentation',
-     author, 'OuroborosImageProcessor', 'One line description of project.',
+    (master_doc, 'OuroborosImageProcessor', 'Ouroboros Image Processor Documentation',  # nopep8
+     author, 'OuroborosImageProcessor', 'One line description of project.',  # nopep8
      'Miscellaneous'),  # nopep8
 ]
 

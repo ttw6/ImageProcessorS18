@@ -31,8 +31,49 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="app-routes-module">
-<h1>app_routes module<a class="headerlink" href="#app-routes-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-app_routes">
+<span id="app-routes-module"></span><h1>app_routes module<a class="headerlink" href="#module-app_routes" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="app_routes.images">
+<code class="descclassname">app_routes.</code><code class="descname">images</code><span class="sig-paren">(</span><em>email</em><span class="sig-paren">)</span><a class="headerlink" href="#app_routes.images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function is a GET request that allows user to
+access all image file names that have been uploaded
+:param email: user email to query data from</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="app_routes.images_time">
+<code class="descclassname">app_routes.</code><code class="descname">images_time</code><span class="sig-paren">(</span><em>email</em><span class="sig-paren">)</span><a class="headerlink" href="#app_routes.images_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function is a GET request that allows user to
+access all upload times of photos of given user
+:param email: user email to query data from</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="app_routes.latency">
+<code class="descclassname">app_routes.</code><code class="descname">latency</code><span class="sig-paren">(</span><em>email</em><span class="sig-paren">)</span><a class="headerlink" href="#app_routes.latency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function is a GET request that allows
+user to access the latency data</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="app_routes.post_image">
+<code class="descclassname">app_routes.</code><code class="descname">post_image</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app_routes.post_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function  is a POST request. Takes in parameters
+of a base 64 image. Loads the original image from path,
+performs a function, then saves the  altered image.
+Takes in base64 image and a number corresponding
+with the function to be performed</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="app_routes.user_stats">
+<code class="descclassname">app_routes.</code><code class="descname">user_stats</code><span class="sig-paren">(</span><em>email</em><span class="sig-paren">)</span><a class="headerlink" href="#app_routes.user_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function is a GET request that allows user to
+access the statistics of filter functions  queried based
+on the email address input</p>
+</dd></dl>
+
 </div>
 
 

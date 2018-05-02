@@ -31,8 +31,192 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="filtering-module">
-<h1>Filtering module<a class="headerlink" href="#filtering-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-Filtering">
+<span id="filtering-module"></span><h1>Filtering module<a class="headerlink" href="#module-Filtering" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="Filtering.contrast_hist">
+<code class="descclassname">Filtering.</code><code class="descname">contrast_hist</code><span class="sig-paren">(</span><em>file_name</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#Filtering.contrast_hist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots histogram after contrast stretching</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> – Image array</li>
+<li><strong>file_name</strong> – name user wants to save image as</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Filtering.contrast_stretching">
+<code class="descclassname">Filtering.</code><code class="descname">contrast_stretching</code><span class="sig-paren">(</span><em>file_name</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#Filtering.contrast_stretching" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjusts contrast in image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image</strong> – jpeg of image</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Image array after contrast stretching</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Filtering.equalization_hist">
+<code class="descclassname">Filtering.</code><code class="descname">equalization_hist</code><span class="sig-paren">(</span><em>file_name</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#Filtering.equalization_hist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves equalized histogram</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> – Image array</li>
+<li><strong>file_name</strong> – name the user wnats to save image as</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Filtering.hist">
+<code class="descclassname">Filtering.</code><code class="descname">hist</code><span class="sig-paren">(</span><em>file_name</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#Filtering.hist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjusts image intensities to enhance contrast.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Parem file_name:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">file name of the image as used to save the image.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> – jpeg of image</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Image array after histogram equalization</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Filtering.log_compression">
+<code class="descclassname">Filtering.</code><code class="descname">log_compression</code><span class="sig-paren">(</span><em>file_name</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#Filtering.log_compression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace pixel value with its logarithm (effectively enhancing low intensity
+pixel values).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file_name</strong> – file name of the image as used to save the image.</li>
+<li><strong>img</strong> – the jpeg image.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">output image (in .jpg)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Filtering.log_hist">
+<code class="descclassname">Filtering.</code><code class="descname">log_hist</code><span class="sig-paren">(</span><em>file_name</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#Filtering.log_hist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots histogram after contrast stretching</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> – Image array</li>
+<li><strong>file_name</strong> – name user wants to save image as</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Filtering.raw_hist">
+<code class="descclassname">Filtering.</code><code class="descname">raw_hist</code><span class="sig-paren">(</span><em>file_name</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#Filtering.raw_hist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots raw histogram</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> – Image array</li>
+<li><strong>file_name</strong> – name of file user wants to save as</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Filtering.rev_hist">
+<code class="descclassname">Filtering.</code><code class="descname">rev_hist</code><span class="sig-paren">(</span><em>file_name</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#Filtering.rev_hist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots histogram after contrast stretching</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> – Image array</li>
+<li><strong>file_name</strong> – name user wants to save image as</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Filtering.reverse_video">
+<code class="descclassname">Filtering.</code><code class="descname">reverse_video</code><span class="sig-paren">(</span><em>file_name</em>, <em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#Filtering.reverse_video" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms image to its negative</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file_name</strong> – file name of the image as used to save the image.</li>
+<li><strong>img</strong> – the jpeg image</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">.jpg image</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Filtering.strip_header">
+<code class="descclassname">Filtering.</code><code class="descname">strip_header</code><span class="sig-paren">(</span><em>base64_str</em><span class="sig-paren">)</span><a class="headerlink" href="#Filtering.strip_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strips the data url header</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>base64_str</strong> – Raw base64 string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Stripped string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 

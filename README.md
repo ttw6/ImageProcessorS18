@@ -39,16 +39,14 @@ Set up another screen to run the Flask server by typing `FLASK_APP=app_routes.py
 
 ________
 
-## Project Functionality
+## Project Functionality and Performance
 [![react_screenshot.jpg](https://s31.postimg.cc/4rewjg7zr/image.png)](https://postimg.cc/image/4rewjg7zr/)
 [![react_screenshot.jpg](https://s31.postimg.cc/7y9g3305j/image.png)](https://postimg.cc/image/7y9g3305j/)
+[![react_screenshot.jpg](https://s31.postimg.cc/4rewjg7zr/image.png)](https://postimg.cc/image/4rewjg7zr/)
 [![react_screenshot.jpg](https://s31.postimg.cc/f1hbipdav/image.png)](https://postimg.cc/image/f1hbipdav/)
 [![react_screenshot.jpg](https://s31.postimg.cc/njqrn1z93/image.png)](https://postimg.cc/image/njqrn1z93/)
 [![react_screenshot.jpg](https://s31.postimg.cc/wrj03re13/image.png)](https://postimg.cc/image/wrj03re13/)
 [![react_screenshot.jpg](https://s31.postimg.cc/rg43j1civ/image.png)](https://postimg.cc/image/rg43j1civ/)
-[![react_screenshot.jpg](https://s31.postimg.cc/4rewjg7zr/image.png)](https://postimg.cc/image/4rewjg7zr/)
 [![react_screenshot.jpg](https://s31.postimg.cc/h61ojthif/image.png)](https://postimg.cc/image/h61ojthif/)
 
-The above 8 images demonstrate the functionality and UI design of the project that we have completed. The first 3 images on the top row show the initial UI design without interaction. There is a drop down that allows the user to choose between 4 different image filtering options. After uploading the image, the user is allowed to commit the action - a functionality allowed by the red button. A seperate tab called user profile allows users to input a user's email to query the metrics corresponding with the queried email. Following the uploading and commiting, the size of the image is displayed. Four windows are also displayed - the original image, the histogram of the original image, the filtered image and the histogram of the filtered image. Under the filtered image, 3 buttons are present - these are options that allow the user to download the filtered image in .jpg, .png or .tiff format. The user profile when queried then displays the information related to the email. Finally
-
-## Project Performance
+The above 8 images demonstrate the functionality and UI design of the project that we have completed. The first 3 images on the top row show the initial UI design without interaction. There is a drop down that allows the user to choose between 4 different image filtering options. After uploading the image, the user is allowed to commit the action - a functionality allowed by the red button. A seperate tab called user profile allows users to input a user's email to query the metrics corresponding with the queried email. Following the uploading and commiting, the size of the image is displayed. Four windows are also displayed - the original image, the histogram of the original image, the filtered image and the histogram of the filtered image. Under the filtered image, 3 buttons are present - these are options that allow the user to download the filtered image in .jpg, .png or .tiff format. The user profile when queried then displays the information related to the email. Finally, the Ouroboros Team tab has a picture of our team and basic information regarding each of the collaborators of the project.

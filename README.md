@@ -12,7 +12,7 @@ This repository contains all frontend server dependencies (ReactJS), backend ser
 __________
 
 ## Frontend UI
-Below is an image of what the frontend server should look like
+The [link](https://ps178.github.io/Ouroboros-Website/) to the GitHub deployed React JS app.
 
 __________
 

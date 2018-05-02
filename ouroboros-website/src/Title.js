@@ -10,7 +10,12 @@ const styles = {
 		flexGrow: 1,
 		},
 	  body: {
-			backgroundColor: '#90caf9'
+			backgroundColor: '#90caf9',
+	
+		},
+	  text: {
+			textAlign: 'center',
+			textDecoration: 'bold',
 		},
 	  
 };
@@ -21,7 +26,7 @@ function SimpleAppBar(props) {
 			        <div className={classes.root}>
 				      <AppBar position="static" className={classes.body}>
 				              <Toolbar>
-					                <Typography variant="title">
+					                <Typography variant="title" className={classes.text}>
 							        Welcome To Ouroboros Image Processor
 				                        </Typography>
 			                      </Toolbar>

@@ -5,6 +5,10 @@ import SimpleAppBar from './Title.js';
 import ButtonHome from './ButtonHome.js';
 import ButtonInfo from './ButtonInfo.js';
 import ButtonCreators from './ButtonCreators.js';
+import TeamInfo from './TeamPic.js';
+import TextFieldUp from './TextField.js';
+import TextFieldGet from './TextFieldGet.js';
+
 
 
 class App extends Component {
@@ -12,6 +16,8 @@ class App extends Component {
 		super();
 		this.state = {
 			"indicator": 1,
+			"user_email": "",
+			"file_name":"",
 		};
 	}
 
@@ -19,48 +25,54 @@ class App extends Component {
 		this.setState({"indicator": indicatorValue});
 	}
 
+
   render() {
-	  if (this.indicator === 1) {
+	  if (this.state.indicator === 1) {
 		  return(
 				  <div>
 				  
 				  <SimpleAppBar/>
-				 1
+				 
 				  <ButtonHome onClickButton={this.onButtonChange}/>
 				  <ButtonInfo onClickButton={this.onButtonChange}/>
-				  <ButtonCreators onClickButton={this.onButtonChange}/> 
+				  <ButtonCreators onClickButton={this.onButtonChange}/>
+				  <TextFieldUp />
+				  
 				  </div>
 				 );
 
 	  }
 
-	  else if (this.indicator ===2) {
+	  else if (this.state.indicator ===2) {
 		  return(
 				  <div>
 				  
 				  <SimpleAppBar />
-				  2
+				  
 				  <ButtonHome onClickButton={this.onButtonChange}/>
 				  <ButtonInfo onClickButton={this.onButtonChange}/>
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
+				  
+				  <TextFieldGet />
+
 				  </div>
 				 );
 	  }
 
-	  else {
+	  else if (this.state.indicator ==3) {
 		  return(
 				  <div>
 
 				  <SimpleAppBar />
-				  3
-				  <ButtonHome onClickButton={this.onButtonChange}/>
-				  <ButtonInfo onClickButton={this.onButtonChange}/>
+				  
+				  <ButtonHome onClickButton={this.onButtonChange}/> <ButtonInfo onClickButton={this.onButtonChange}/>
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
+				  
+				  <TeamInfo />
 				  </div>
 			);
-
-
 	  }
+
   }
 }
 

@@ -12,6 +12,7 @@ import base64  # nopep8
 def hist(file_name, img):
     """
     Adjusts image intensities to enhance contrast.
+    
     :parem file_name: file name of the image as used to save the image.
     :param img: jpeg of image
     :return: Image array after histogram equalization
@@ -25,6 +26,7 @@ def hist(file_name, img):
 def equalization_hist(file_name, img):
     """
     Saves equalized histogram
+    
     :param img: Image array
     :param file_name: name the user wnats to save image as
     """
@@ -39,6 +41,7 @@ def equalization_hist(file_name, img):
 def contrast_stretching(file_name, img):
     """
     Adjusts contrast in image.
+    
     :param image: jpeg of image
     :return: Image array after contrast stretching
     """
@@ -52,6 +55,7 @@ def contrast_stretching(file_name, img):
 def contrast_hist(file_name, img):
     """
     Plots histogram after contrast stretching
+    
     :param img: Image array
     :param file_name: name user wants to save image as
     """
@@ -65,6 +69,7 @@ def contrast_hist(file_name, img):
 def raw_hist(file_name, img):
     """
     Plots raw histogram
+    
     :param img: Image array
     :param file_name: name of file user wants to save as
     """
@@ -79,6 +84,7 @@ def log_compression(file_name, img):
     """
     Replace pixel value with its logarithm (effectively enhancing low intensity
     pixel values).
+    
     :param file_name: file name of the image as used to save the image.
     :param img: the jpeg image.
     :return: output image (in .jpg)
@@ -92,6 +98,7 @@ def log_compression(file_name, img):
 def log_hist(file_name, img):
     """
     Plots histogram after contrast stretching
+    
     :param img: Image array
     :param file_name: name user wants to save image as
     """
@@ -105,6 +112,7 @@ def log_hist(file_name, img):
 def reverse_video(file_name, img):
     """
     Transforms image to its negative
+    
     :param file_name: file name of the image as used to save the image.
     :param img: the jpeg image
     :return: .jpg image
@@ -118,6 +126,7 @@ def reverse_video(file_name, img):
 def rev_hist(file_name, img):
     """
     Plots histogram after contrast stretching
+    
     :param img: Image array
     :param file_name: name user wants to save image as
     """
@@ -131,6 +140,7 @@ def rev_hist(file_name, img):
 def strip_header(base64_str):
     """
     Strips the data url header
+    
     :param base64_str: Raw base64 string
     :return: Stripped string
     """

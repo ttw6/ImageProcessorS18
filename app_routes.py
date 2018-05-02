@@ -19,6 +19,7 @@ connect("mongodb://vcm-3584.vm.duke.edu:27017/Image_Folder")
 
 @app.route('/<email>/images', methods=['GET'])
 def images(email):
+
     """Function is a GET request that allows user to
     access all image file names that have been uploaded
     :param email: user email to query data from"""
@@ -34,6 +35,7 @@ def images(email):
 
 @app.route('/<email>/timestamps', methods=['GET'])
 def images_time(email):
+
     """Function is a GET request that allows user to
     access all upload times of photos of given user
     :param email: user email to query data from"""
@@ -49,6 +51,7 @@ def images_time(email):
 
 @app.route('/<email>/user_action', methods=['GET'])
 def user_stats(email):
+
     """Function is a GET request that allows user to
     access the statistics of filter functions  queried based
     on the email address input"""
@@ -65,6 +68,7 @@ def user_stats(email):
 
 @app.route('/<email>/latency', methods=['GET'])
 def latency(email):
+
     """Function is a GET request that allows
     user to access the latency data"""
     mail = "{0}".format(email)
@@ -79,6 +83,7 @@ def latency(email):
 
 @app.route('/imageFilter', methods=['POST'])
 def post_image():
+
     """Function  is a POST request. Takes in parameters
     of a base 64 image. Loads the original image from path,
     performs a function, then saves the  altered image.

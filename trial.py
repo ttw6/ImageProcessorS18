@@ -24,5 +24,5 @@ input1 = {
 r1 = requests.post("http://vcm-3584.vm.duke.edu:5000/imageFilter", json=input1)
 # print(r1.json())
 
-r2 = requests.get("http://vcm-3584.vm.duke.edu:5000/suyash@suyashkumar.com/user_action") # nopep8
+r2 = requests.get("http://vcm-3584.vm.duke.edu:5000/suyash@suyashkumar.com/user_action")  # nopep8
 print(r2.json())

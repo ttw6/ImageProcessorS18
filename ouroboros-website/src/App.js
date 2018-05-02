@@ -9,6 +9,17 @@ import TeamInfo from './TeamPic.js';
 import TextFieldUp from './TextField.js';
 import TextFieldGet from './TextFieldGet.js';
 
+
+const styles = {
+	writeUp: {
+			position: 'absolute',
+			top: '200px',
+			left: '300px',
+			
+		},
+}
+
+
 class App extends Component {
 	constructor() {
 		super();
@@ -67,6 +78,15 @@ class App extends Component {
 				  <ButtonCreators onClickButton={this.onButtonChange}/>
 				  
 				  <TeamInfo />
+				  <p style={styles.writeUp}>
+				  Alex Sheu is a senior majoring in biomedical engineering and minoring in computer science. He was raised in Taiwon for the first 18 years of his life till he came to Duke. He enjoys meeting meeting new people and spending time with friends. His favourite food is turkey.
+
+				 Petek Sener is a senior majoring in biomedical engineering and minoring in neuroscience. Petek enjoys watching anime and going to the gym. Her favourite food is cereal.
+
+				Tiffany Wu is a senior majoring in biomedical engineering and minoring in pyschology.Tiffany enjoys greek mythology and astronomy. Her favourite food is green tea ice-cream. 
+
+
+				  </p>
 				  </div>
 			);
 	  }

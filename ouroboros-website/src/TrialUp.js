@@ -7,16 +7,21 @@ const styles = {
 	loadBox: {
 			 backgroundColor: 'gray',
      			 width: '200px',
-			 height: '200px',
+			 height: '150px',
 			 textAlign: 'center',
+			 textFont: '5px',
 			 position: 'absolute',
-			 top: '400px',
-			 left: '150px',},
+			 top: '150px',
+			 left: '500px',},
 	infoBox: {
 			 textAlign: 'center',
+			 textFont: '10px',
 			 position: 'absolute',
-			 top: '600px',
-			 left: '150px',}
+			 top: '150px',
+			 left: '700px',},
+	write: {
+                         textFont: '5px',
+	       },
 }
 
 
@@ -36,7 +41,7 @@ class Basic extends React.Component {
 			const file = files[0]
 			reader.readAsDataURL(file);
 			reader.onloadend = () => {
-				console.log(reader.result);	
+				//console.log(reader.result);	
 				this.setState({currentImageString: reader.result});
 				this.props.onImageUp(this.state.currentImageString);
 			  }
@@ -48,7 +53,7 @@ class Basic extends React.Component {
 			        <div className="dropzone">
 				
 				<Dropzone onDrop={this.onDrop.bind(this)} style={styles.loadBox}>
-				<h2> Drop file here to upload, or click to select file </h2>
+				<h2 style={styles.write}> Drop file here to upload, or click to select file </h2>
 				</Dropzone>
 				</div>
 

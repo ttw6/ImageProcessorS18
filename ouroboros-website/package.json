@@ -7,6 +7,7 @@
     "material-ui": "^1.0.0-beta.42",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-download-link": "^2.1.3",
     "react-dropzone": "^4.2.9",
     "react-scripts": "1.1.4",
     "react-upload-field": "^0.1.0"

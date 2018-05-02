@@ -10,6 +10,9 @@ const styles = theme => ({
 	  root: {
 			    display: 'flex',      
                             flexWrap: 'wrap',
+                            position: 'absolute',
+                            top: '240px',
+                            left: '40px',
         },
 
         formControl: {
@@ -20,6 +23,7 @@ const styles = theme => ({
         selectEmpty: {
 			         marginTop: theme.spacing.unit * 2,
         },
+        
 });
 
 class SimpleSelect extends React.Component {

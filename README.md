@@ -40,3 +40,5 @@ Set up another screen to run the Flask server by typing `FLASK_APP=app_routes.py
 ________
 
 ## Project performance
+[![react_screenshot.jpg](https://s31.postimg.cc/4rewjg7zr/image.png)](https://postimg.cc/image/4rewjg7zr/)
+

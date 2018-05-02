@@ -1,6 +1,7 @@
 # ImageProcessorS18
 
 [![Build Status](https://travis-ci.org/ttw6/ImageProcessorS18.svg?branch=master)](https://travis-ci.org/ttw6/ImageProcessorS18)
+[![Documentation Status](https://readthedocs.org/projects/imageprocessors18-docs/badge/?version=latest)](http://imageprocessors18-docs.readthedocs.io/en/latest/?badge=latest)
 __________
 
 ## Ouroboros Image Processor

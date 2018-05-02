@@ -106,7 +106,6 @@ def post_image():
     if not isinstance(image_name, str):
         return 'Image name must be string type, please reinput', 400
 
-    
     image_string_stripped = strip_header(data_string)
     save_image_string(image_string_stripped, image_name + '.jpg')
     # saves image into VCM since flask runs on VCM
@@ -122,7 +121,6 @@ def post_image():
     im_size2 = im.size[1]
     raw_hist(image_name, image)
 
-
     try:
         add_user_action(email, filt, image_name, upload_time)
 
@@ -130,7 +128,7 @@ def post_image():
         create_user(email, image_name, upload_time)
 
     filt_img = filter_image(email, filt, image_name, image, start_time)
-    
+
     if filt == 1:
         extension_name = '_equal'
         hist_extension = '1_hist'
@@ -143,16 +141,16 @@ def post_image():
     else:
         extension_name = '_rev'
         hist_extension = '4_hist'
-   
-    with open(image_name + extension_name +'.jpg', 'rb') as image_file:
+
+    with open(image_name + extension_name + '.jpg', 'rb') as image_file:
         image_str = base64.b64encode(image_file.read())
-    
+
     with open(image_name + hist_extension + '.jpg', 'rb') as image_file_hist:
         hist_str = base64.b64encode(image_file_hist.read())
 
     with open(image_name + 'raw_hist.jpg', 'rb') as raw_file:
         raw_hist_str = base64.b64encode(raw_file.read())
-  
+
     image_string_ascii = image_str.decode('ascii')
     hist_string_ascii = hist_str.decode('ascii')
     raw_hist_str = raw_hist_str.decode('ascii')

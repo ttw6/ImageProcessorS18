@@ -151,7 +151,7 @@ def post_image():
         hist_str = base64.b64encode(image_file_hist.read())
 
     with open(image_name + 'raw_hist.jpg', 'rb') as raw_file:
-        raw_hist_str = base64.b64encode(raw_file.read()))
+        raw_hist_str = base64.b64encode(raw_file.read())
   
     image_string_ascii = image_str.decode('ascii')
     hist_string_ascii = hist_str.decode('ascii')

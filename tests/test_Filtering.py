@@ -14,6 +14,16 @@ def test_string():
     assert isinstance(result_jpg, bytes)
 
 
+def test_save_image_string():
+    """
+    Test save_image_string
+    """
+    input_str = 'tests/test.jpg'
+    result_jpg = encode_image_string(input_str)
+    results = save_image_string(result_jpg, 'hi.jpg')
+    assert os.path.isfile('hi.jpg')
+
+
 def test_hist():
     """
     Tests hist fn w/ test.jpg image and checks if processed image exists

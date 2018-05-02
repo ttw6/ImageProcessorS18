@@ -34,7 +34,7 @@ def add_user_action(email, action_key, file_name, upload_time):
     """
     The following function modifies the user actions that are being
     peformed and called on the react front end server
-    It is called when the user already exists and 
+    It is called when the user already exists and
     additional information is appended upon existing
     information
 
@@ -64,7 +64,7 @@ def filter_image(email, action_key, file_name, vcm_image, start_time):
     """ The following function  queries for the email address of the user,
     filters the image based on the action_key given, computes the latency
     of the filtering option and then returns the filtered image
-    
+
     :param email: email of the user to be queried
     :param file_name: name of the image that is being uploaded
     :param action_key: the number designating the filtering option

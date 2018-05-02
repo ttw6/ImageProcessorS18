@@ -118,7 +118,8 @@ def post_image():
 
     image = io.imread(image_name + '.jpg')
     im = Image.open(image_name + '.jpg')
-    im_size = im.size
+    im_size1 = im.size[0]
+    im_size2 = im.size[1]
     raw_hist(image_name, image)
 
 
@@ -158,5 +159,6 @@ def post_image():
     json_data = {"filtered_string": image_string_ascii,
                  "hist_string": hist_string_ascii,
                  "raw_hist": raw_hist_str,
-                 "image_size": im_size}
+                 "image_size1": im_size1,
+                 "image_size2": im_size2}
     return jsonify(json_data), 200

@@ -48,6 +48,7 @@ def add_user_action(email, action_key, file_name, upload_time):
         user.user_action['reverse'] += 1
     user.save()
 
+
 def filter_image(email, action_key, file_name, vcm_image, start_time):
 
     """ The following function  queries for the email address of the user,

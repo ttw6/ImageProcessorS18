@@ -35,7 +35,7 @@ def equalization_hist(file_name, img):
     plt.clf()
     plt.cla()
     plt.close()
-    
+
 
 def contrast_stretching(file_name, img):
     """

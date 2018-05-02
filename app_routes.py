@@ -10,6 +10,7 @@ from skimage import data, img_as_float
 from skimage import exposure, io, util
 from flask_cors import CORS
 from ImageEncoding import *
+from PIL import Image
 
 app = Flask(__name__)
 CORS(app)
@@ -116,6 +117,8 @@ def post_image():
     start_time = time.time()
 
     image = io.imread(image_name + '.jpg')
+    im = Image.open(image_name + '.jpg')
+    im_size = im.size
     raw_hist(image_name, image)
 
 
@@ -154,5 +157,6 @@ def post_image():
     raw_hist_str = raw_hist_str.decode('ascii')
     json_data = {"filtered_string": image_string_ascii,
                  "hist_string": hist_string_ascii,
-                 "raw_hist": raw_hist_str}
+                 "raw_hist": raw_hist_str,
+                 "image_size": im_size}
     return jsonify(json_data), 200

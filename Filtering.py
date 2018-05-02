@@ -1,14 +1,12 @@
 import matplotlib
-
 matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import numpy as np
-# import cv2
-from skimage import data, img_as_float
-from skimage import exposure, io, util
-import os
-import base64
+import matplotlib.pyplot as plt  # nopep8
+import matplotlib.image as mpimg  # nopep8
+import numpy as np  # nopep8
+from skimage import data, img_as_float  # nopep8
+from skimage import exposure, io, util  # nopep8
+import os  # nopep8
+import base64  # nopep8
 
 
 def hist(file_name, img):

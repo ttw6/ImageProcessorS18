@@ -10,6 +10,7 @@ from skimage import data, img_as_float
 from skimage import exposure, io, util
 from flask_cors import CORS
 from ImageEncoding import *
+from PIL import Image
 
 app = Flask(__name__)
 CORS(app)
@@ -105,7 +106,6 @@ def post_image():
     if not isinstance(image_name, str):
         return 'Image name must be string type, please reinput', 400
 
-    
     image_string_stripped = strip_header(data_string)
     save_image_string(image_string_stripped, image_name + '.jpg')
     # saves image into VCM since flask runs on VCM
@@ -116,8 +116,10 @@ def post_image():
     start_time = time.time()
 
     image = io.imread(image_name + '.jpg')
+    im = Image.open(image_name + '.jpg')
+    im_size1 = im.size[0]
+    im_size2 = im.size[1]
     raw_hist(image_name, image)
-
 
     try:
         add_user_action(email, filt, image_name, upload_time)
@@ -126,6 +128,35 @@ def post_image():
         create_user(email, image_name, upload_time)
 
     filt_img = filter_image(email, filt, image_name, image, start_time)
-    image_string = base64.b64encode(filt_img)
-    json_data = {"filtered_string": str(image_string)}
+
+    if filt == 1:
+        extension_name = '_equal'
+        hist_extension = '1_hist'
+    elif filt == 2:
+        extension_name = '_contrast'
+        hist_extension = '2_hist'
+    elif filt == 3:
+        extension_name = '_log'
+        hist_extension = '3_hist'
+    else:
+        extension_name = '_rev'
+        hist_extension = '4_hist'
+
+    with open(image_name + extension_name + '.jpg', 'rb') as image_file:
+        image_str = base64.b64encode(image_file.read())
+
+    with open(image_name + hist_extension + '.jpg', 'rb') as image_file_hist:
+        hist_str = base64.b64encode(image_file_hist.read())
+
+    with open(image_name + 'raw_hist.jpg', 'rb') as raw_file:
+        raw_hist_str = base64.b64encode(raw_file.read())
+
+    image_string_ascii = image_str.decode('ascii')
+    hist_string_ascii = hist_str.decode('ascii')
+    raw_hist_str = raw_hist_str.decode('ascii')
+    json_data = {"filtered_string": image_string_ascii,
+                 "hist_string": hist_string_ascii,
+                 "raw_hist": raw_hist_str,
+                 "image_size1": im_size1,
+                 "image_size2": im_size2}
     return jsonify(json_data), 200

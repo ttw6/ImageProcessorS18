@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
-import indigo from 'material-ui/colors/indigo';
+import blue from 'material-ui/colors/blue';
 
 
 const styles = {
@@ -14,9 +14,15 @@ const styles = {
               fontSize: 15,
               padding: '6px 12px',
               border: '2px solid',
-              backgroundColor: '#7986cb',
-	      borderColor:'#49599a',
+              backgroundColor: '#90caf9',
+	      borderColor:'#5d99c6',
         },
+	relative: {
+	      position: 'absolute',
+	      left: '25px',
+	      top: '75px',
+
+	},
 }
 
 class ButtonHome extends React.Component {
@@ -34,7 +40,7 @@ class ButtonHome extends React.Component {
 
 	render() {
 		return (
-				<div>
+				<div style={styles.relative}>
 				<Button variant="raised" style={styles.button} onClick={this.onButtonClick}>
 				Home
 				</Button>

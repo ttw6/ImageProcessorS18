@@ -11,7 +11,7 @@ connect("mongodb://localhost:27017/Image_Folder")  # open up connection to db
 with open('20180117_201745.jpg', 'rb') as image_file:
     image_string = base64.b64encode(image_file.read())
 
-   
+
 str_ascii = image_string.decode('ascii')
 
 input1 = {

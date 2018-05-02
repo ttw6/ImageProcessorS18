@@ -43,7 +43,7 @@ class ButtonInfo extends React.Component {
 		return (
 				<div style={styles.relative}>
 				<Button variant="raised" style={styles.button} onClick={this.onButtonClick}>
-				Information
+				User Profile
 				</Button>
 				</div>
 		       );

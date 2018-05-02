@@ -10,6 +10,8 @@ The following is a repository for the BME590, image processor final project.
 
 This repository contains all frontend server dependencies (ReactJS), backend server construction (flask) and all functions relevant to interfacing the components together (filtering functionalities using the skimage package, histogram displays using matplotlib and numpy packages). Mongo databases are previously setup on virtual machines (VM) but connections to these databases will be visible in the repository as well.
 
+Further details about the structure of the project can be found in the [RFC](https://docs.google.com/document/d/11TBQs9GqNrUWA8v1AS5QeC-cD4Yi-HzXVS0enoCE5cg/edit?usp=sharing).
+
 __________
 
 ## Frontend UI

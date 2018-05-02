@@ -4,7 +4,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # Code to automatically find parent directory: https://stackoverflow.com/
 # questions/16780014/import-file-from-parent-directory
-from Filtering import strip_header
+from Filtering import strip_header  # nopep8
 
 
 def test_strip_header():

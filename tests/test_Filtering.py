@@ -1,11 +1,8 @@
-from skimage import io
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-# Code to automatically find parent directory: https://stackoverflow.com/
-# questions/16780014/import-file-from-parent-directory
-from Filtering import *
-from ImageEncoding import *
+from Filtering import *  # nopep8
+from ImageEncoding import *  # nopep8
 
 
 def test_string():
@@ -26,7 +23,19 @@ def test_reverse_video():
     assert os.path.isfile('sample_rev.jpg')
 
 
+def test_hist():
+    input1 = io.imread('test.jpg')
+    hist('sample', input1)
+    assert os.path.isfile('sample_equal.jpg')
+
+
 def test_equal_hist():
     input1 = io.imread('test.jpg')
     equalization_hist('sample', input1)
     assert os.path.isfile('sample1_hist.jpg')
+
+
+def test_contrast_hist():
+    input1 = io.imread('test.jpg')
+    contrast_stretching('sample', input1)
+    assert os.path.isfile('sample_contrast.jpg')

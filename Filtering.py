@@ -1,8 +1,10 @@
-#import matplotlib
-#import matplotlib.pyplot as plt
-#import matplotlib.image as mpimg
+import matplotlib
+
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import numpy as np
-#import cv2
+# import cv2
 from skimage import data, img_as_float
 from skimage import exposure, io, util
 import os
@@ -12,14 +14,13 @@ import base64
 def hist(file_name, img):
     """
     Adjusts image intensities to enhance contrast.
-
     :parem file_name: file name of the image as used to save the image.
     :param img: jpeg of image
     :return: Image array after histogram equalization
     """
     equal = exposure.equalize_hist(img)
     equalization_hist(file_name, equal)
-    img_equal = io.imsave(file_name + '_hist.jpg', equal)
+    img_equal = io.imsave(file_name + '_equal.jpg', equal)
     return equal
 
 
@@ -29,18 +30,17 @@ def equalization_hist(file_name, img):
     :param img: Image array
     :param file_name: name the user wnats to save image as
     """
-    return
+
     plt.hist(img.ravel(), 256, [0, 1])
     plt.savefig(file_name + '1_hist.jpg')
     plt.clf()
     plt.cla()
     plt.close()
-    
+
 
 def contrast_stretching(file_name, img):
     """
     Adjusts contrast in image.
-
     :param image: jpeg of image
     :return: Image array after contrast stretching
     """
@@ -57,7 +57,6 @@ def contrast_hist(file_name, img):
     :param img: Image array
     :param file_name: name user wants to save image as
     """
-    return
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '2_hist.jpg')
     plt.clf()
@@ -71,7 +70,6 @@ def raw_hist(file_name, img):
     :param img: Image array
     :param file_name: name of file user wants to save as
     """
-    return
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + 'raw_hist.jpg')
     plt.clf()
@@ -99,7 +97,6 @@ def log_hist(file_name, img):
     :param img: Image array
     :param file_name: name user wants to save image as
     """
-    return
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '3_hist.jpg')
     plt.clf()
@@ -126,7 +123,6 @@ def rev_hist(file_name, img):
     :param img: Image array
     :param file_name: name user wants to save image as
     """
-    return
     plt.hist(img.ravel(), 256, [0, 256])
     plt.savefig(file_name + '4_hist.jpg')
     plt.clf()

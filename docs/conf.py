@@ -130,7 +130,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'OuroborosImageProcessor.tex', 'Ouroboros Image Processor Documentation',
-     'Alex Sheu, Petek Sener, Tiffany Wu', 'manual'),
+     'Alex Sheu, Petek Sener, Tiffany Wu', 'manual'),  # nopep8
 ]
 
 
@@ -140,7 +140,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     (master_doc, 'ouroborosimageprocessor', 'Ouroboros Image Processor Documentation',
-     [author], 1)
+     [author], 1)  # nopep8
 ]
 
 
@@ -152,7 +152,7 @@ man_pages = [
 texinfo_documents = [
     (master_doc, 'OuroborosImageProcessor', 'Ouroboros Image Processor Documentation',
      author, 'OuroborosImageProcessor', 'One line description of project.',
-     'Miscellaneous'),
+     'Miscellaneous'),  # nopep8
 ]
 
 

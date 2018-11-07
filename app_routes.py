@@ -14,7 +14,7 @@ from PIL import Image
 
 app = Flask(__name__)
 CORS(app)
-connect("mongodb://vcm-3584.vm.duke.edu:27017/Image_Folder")
+connect("mongodb://vcm-7272.vm.duke.edu:27017/Image_Folder")
 
 
 @app.route('/<email>/images', methods=['GET'])

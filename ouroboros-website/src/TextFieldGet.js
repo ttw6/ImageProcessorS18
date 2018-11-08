@@ -33,20 +33,20 @@ class TextFieldGet extends React.Component {
 
 
     fetchData = () => {
-	    axios.get("http://vcm-3584.vm.duke.edu:5000/" + this.state.user_email + "/images").then( (response) =>{
+	    axios.get("http://vcm-7272.vm.duke.edu:5000/" + this.state.user_email + "/images").then( (response) =>{
 		    console.log(response.status);
 		    this.setState({"im_names": JSON.stringify(response.data)});
 	    });
-	    axios.get("http://vcm-3584.vm.duke.edu:5000/" + this.state.user_email + "/user_action").then( (response) =>{
+	    axios.get("http://vcm-7272.vm.duke.edu:5000/" + this.state.user_email + "/user_action").then( (response) =>{
 		    console.log(response.status);
 		    this.setState({"user_action": JSON.stringify(response.data)});
 	    });
-	    axios.get("http://vcm-3584.vm.duke.edu:5000/" + this.state.user_email + "/latency").then( (response) =>{
+	    axios.get("http://vcm-7272.vm.duke.edu:5000/" + this.state.user_email + "/latency").then( (response) =>{
 		    console.log(response.status);
 		    this.setState({"latency": JSON.stringify(response.data)});
 	    });
 
-	    axios.get("http://vcm-3584.vm.duke.edu:5000/" + this.state.user_email + "/timestamps").then( (response) =>{
+	    axios.get("http://vcm-7272.vm.duke.edu:5000/" + this.state.user_email + "/timestamps").then( (response) =>{
 		    console.log(response.status);
 		    this.setState({"time_stamp": JSON.stringify(response.data)});
 	    });

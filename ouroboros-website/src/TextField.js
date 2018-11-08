@@ -202,7 +202,7 @@ class TextFieldUp extends React.Component {
     }
 
     fetchDataPost = () => {
-	    axios.post("http://vcm-3584.vm.duke.edu:5000/imageFilter", {
+	    axios.post("http://vcm-7272.vm.duke.edu:5000/imageFilter", {
 	            email: this.state.user_email ,
 	            filename: this.state.image_name ,
 	            Data: this.state.image_data ,
